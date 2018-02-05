@@ -14,4 +14,8 @@ router.get('/login', function(req, res, next) {
   res.render('login', );
 });
 
+router.get('/trombinoscope', function(req, res, next) {
+  res.render('trombinoscope', );
+});
+
 module.exports = router;
