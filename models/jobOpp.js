@@ -3,9 +3,13 @@ const { Schema } = mongoose;
 
 const jobOppSchema = new Schema ({
   postedBy: String,
-  email: String,
-  password: String,
-  Role: { type: String, default: "standard" }
+  postDate: String,
+  jobTitle: String,
+  jobCompany: String,
+  jobRegion: String,
+  jobSalary: String,
+  jobContractType: String,
+  jobInfo: String
 })
 
 mongoose.model('users', userSchema);
