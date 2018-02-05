@@ -1,8 +1,6 @@
-var mongoose= require('mongoose');
+var mongoose = require('mongoose');
 
-
-
-var Profiles_Schema = mongoose.Schema({
+var profileSchema = new mongoose.Schema({
     lastName: String,
     firstName: String,
     email: String,
@@ -13,7 +11,6 @@ var Profiles_Schema = mongoose.Schema({
     wantedJob: String,
     wanttoDo: String,
     notwanttoDo: String
-
 });
 
-var Profiles_Model = mongoose.model('List_of_profiles', Profiles_Schema);
+mongoose.model('profiles', profileSchema);

@@ -5,10 +5,10 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-//
-// router.get('/profile', function(req, res, next) {
-//   res.render('profile', );
-// });
+
+router.get('/profile', function(req, res, next) {
+  res.render('profile', );
+});
 //
 // router.get('/login', function(req, res, next) {
 //   res.render('login', );
