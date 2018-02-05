@@ -7,14 +7,6 @@ var bodyParser = require('body-parser');
 var session = require("express-session");
 
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var profile = require('./routes/profile');
-var jobOpp = require('./routes/job_opportunity');
-var session = require('express-session');
-
-
-
 var mongoose = require('mongoose');
 
 var options = { server: { socketOptions: {connectTimeoutMS: 5000 } }};
@@ -25,8 +17,16 @@ mongoose.connect('mongodb://Victor:Momentum1992@ds225308.mlab.com:25308/lacapsul
     }
 );
 
+
 require('./models/users');
 require('./models/profile');
+
+var index = require('./routes/index');
+var users = require('./routes/users');
+var profile = require('./routes/profile');
+var jobOpp = require('./routes/job_opportunity');
+var session = require('express-session');
+
 
 var index = require('./routes/index');
 // var users = require('./routes/users');
