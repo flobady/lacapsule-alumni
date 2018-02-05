@@ -21,7 +21,7 @@ require("./models/users");
 require("./models/profile");
 
 var index = require("./routes/index");
-var users = require("./routes/users");
+// var users = require("./routes/users");
 var profile = require("./routes/profile");
 var jobOpp = require("./routes/job_opportunity");
 var session = require("express-session");
@@ -56,7 +56,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", index);
-app.use("/users", users);
+// app.use("/users", users);
 app.use("/profile", profile);
 app.use("/jobopp", jobOpp);
 app.use("/login", login);

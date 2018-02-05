@@ -1,6 +1,7 @@
 // START HOME EXPRESS
 var express = require("express");
 var router = express.Router();
+var session = require("express-session");
 
 // Initialisation du module dans le projet
 var mongoose = require("mongoose");
@@ -18,6 +19,7 @@ router.post("/signup", function(req, res, next) {
   // Ecriture des données
   newUser.save(function(error, user) {
     console.log(user);
+    // req.session.user = { id: user._id }
     res.render("login");
   });
 });
