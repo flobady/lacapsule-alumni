@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var profileSchema = new mongoose.Schema({
+    userId: String,
     lastName: String,
     firstName: String,
     email: String,

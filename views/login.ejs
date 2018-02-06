@@ -27,27 +27,26 @@
                 <div class="breadcrumb">
                     <ul>
                         <li>
-                            <a href="#">Le VICATHRIEN</a>
+                            <a href="/">Le VICATHRIEN</a>
                         </li>
                         <li class="active">
-                            <a href="#">Se créer un compte</a>
+                            <a href="#">Se connecter</a>
                         </li>
                     </ul>
                 </div>
                 <div class="page-title">
-                    <h1>Veuillez vous authentifier</h1>
-                    <span>Visiter le site c'est bien, se connecter c'est mieux</span>
+                    <h1>Je me connecte</h1>
+                    <span>Déjà inscrit, connectez vous!</span>
                 </div>
             </div>
         </section>
         <!-- end: Page title -->
 
         <hr class="space">
-
         <!--Login et mot de passe -->
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <form class="formulaire" action="/login/signup" method="POST">
+                <form class="formulaire" action="/users/signin" method="POST">
                     <div class="form-group">
                         <label class="sr-only">Email</label>
                         <input type="text" name="email" class="form-control" placeholder="Entrer votre email">
@@ -57,7 +56,7 @@
                         <input type="password" name="password" class="form-control" placeholder="Entrer votre mot de passe">
                     </div>
                     <div class="form-inline form-group">
-                        <button class="btn btn-default" type="submit">Me connecter</button>
+                        <button class="btn btn-default" type="submit">Se connecter</button>
                         <div class="checkbox float-right">
                             <label class="no-margin">
                                 <input type="checkbox">
@@ -71,19 +70,53 @@
                 </form>
             </div>
         </div>
+
+        <%if(msg){ if(msg.signinFail){%>
+          <%= msg.signinFail %>
+        <%}}%>
         <!-- Login et mot de passe-->
         <hr class="space">
 
-        <!-- Footer -->
-        <footer id="footer" class="footer-light">
-            <div class="copyright-content">
-                <div class="container">
-                    <div class="copyright-text text-center">&copy; 2018 - Le VICATHRIEN - Tous droits reservées
-                    </div>
+        <!-- Page title -->
+        <section id="page-title" class="page-title-classic">
+            <div class="container">
+                <div class="page-title">
+                    <h1>Je me créé un compte</h1>
+                    <span>Vous êtes un ancien, créée votre compte</span>
                 </div>
             </div>
-        </footer>
-        <!-- end: Footer -->
+        </section>
+        <!-- end: Page title -->
+
+        <hr class="space">
+        <!--Login et mot de passe -->
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form class="formulaire" action="/users/signup" method="POST">
+                    <div class="form-group">
+                        <label class="sr-only">Email</label>
+                        <input type="text" name="email" class="form-control" placeholder="Entrer votre email">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only">Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="Entrer votre mot de passe">
+                    </div>
+                    <div class="form-inline form-group">
+                        <button class="btn btn-default" type="submit">Me connecter</button>
+                    </div>
+                    <a href="#">
+                        <small>Mot de passe oublié?</small>
+                    </a>
+                </form>
+            </div>
+        </div>
+
+        <%if(msg){ if(msg.signupFail){%>
+          <%= msg.signupFail %>
+        <%}}%>
+        <!-- Login et mot de passe-->
+        <hr class="space">
+
 
     </div>
     <!-- end: Wrapper -->

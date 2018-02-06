@@ -1,44 +1,58 @@
 <!-- Le header -->
-   <header id="header">
-     <div id="header-wrap">
-       <div class="container">
-         <!--Logo
-                   <div id="logo">
-                       <a href="index.html" class="logo" data-dark-logo="images/logo-dark.png"> <img src="images/logo.png" alt="Polo Logo"> </a>
-                   </div>
-                   End: Logo-->
+<header id="header">
+  <div id="header-wrap">
+    <div class="container">
+<!--Logo
+<div id="logo">
+<a href="index.html" class="logo" data-dark-logo="images/logo-dark.png"> <img src="images/logo.png" alt="Polo Logo"> </a>
+</div>
+End: Logo-->
 
-         <!--Navigation Responsive-->
-         <div id="mainMenu-trigger">
-           <button class="lines-button x">
-             <span class="lines"></span>
-           </button>
-         </div>
-         <!--end: Navigation Responsive-->
+<!--Navigation Responsive-->
+<div id="mainMenu-trigger">
+  <button class="lines-button x">
+    <span class="lines"></span>
+  </button>
+</div>
+<!--end: Navigation Responsive-->
 
-         <!--Le Menu -->
-         <div id="mainMenu">
-           <div class="container">
-             <nav>
-               <ul>
-                 <li>
-                   <a href="index.html">Pool de profils</a>
-                 </li>
-                 <li class="#">
-                   <a href="#">Wall</a>
-                   <li class="#">
-                     <a href="#">Forum</a>
-                     <li class="#">
-                       <a href="#">Job Opportunities</a>
-                       <li class="#">
-                         <a href="#">Batch #</a>
-                       </li>
-               </ul>
-             </nav>
-           </div>
-         </div>
-         <!--END: Le Menu-->
-       </div>
-     </div>
-   </header>
-   <!-- end: Le Header -->
+<!--Le Menu -->
+<div id="mainMenu">
+  <div class="container">
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">Pool de profils</a>
+        </li>
+        <li class="#">
+          <a href="#">Wall</a>
+          <li class="#">
+            <a href="#">Forum</a>
+            <li class="#">
+              <a href="#">Job Opportunities</a>
+              <li class="#">
+                <a href="#">Batch #</a>
+              </li>
+              <li class="#">
+                <a href="/profile">Mon profil</a>
+              </li>
+
+              <%if(!user){%>
+              <li class="#">
+                <a href="/users">Sign-In / Sign-Up</a>
+              </li>
+              <%} else {%>
+              <li class="#">
+                <a href="/users/logout">Logout</a>
+              </li>
+
+              <%}%>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!--END: Le Menu-->
+    </div>
+  </div>
+</header>
+<!-- end: Le Header -->

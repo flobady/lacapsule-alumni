@@ -5,12 +5,13 @@ var logger = require("morgan");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
 var session = require("express-session");
+var config = require("./config");
 
 var mongoose = require("mongoose");
 
 var options = { server: { socketOptions: { connectTimeoutMS: 5000 } } };
 mongoose.connect(
-  "mongodb://Victor:Momentum1992@ds225308.mlab.com:25308/lacapsule_alumni_profiles",
+  config.mongoURI,
   options,
   function(err) {
     console.log(err);
@@ -25,10 +26,10 @@ var index = require("./routes/index");
 var profile = require("./routes/profile");
 var jobOpp = require("./routes/job_opportunity");
 var session = require("express-session");
-var login = require("./routes/login");
+// var login = require("./routes/login");
 
 var index = require("./routes/index");
-// var users = require('./routes/users');
+var users = require('./routes/users');
 var profile = require("./routes/profile");
 var session = require("express-session");
 
@@ -59,7 +60,7 @@ app.use("/", index);
 // app.use("/users", users);
 app.use("/profile", profile);
 app.use("/jobopp", jobOpp);
-app.use("/login", login);
+app.use("/users", users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

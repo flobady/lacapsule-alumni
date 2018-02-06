@@ -3,7 +3,7 @@ var mongoose = require("mongoose");
 
 // Défini les types des données d'un enregistrement
 var userSchema = mongoose.Schema({
-  email: String,
+  email: { type: String, unique: true, lowercase: true },
   password: String
 });
 
