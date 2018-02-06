@@ -1,1 +1,139 @@
-Ceci est la fenetre de login
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Julien Victor Athmane" />
+    <meta name="description" content="Le CapsuleWall est un portail Capsulien">
+    <meta name="keywords" content="#">
+    <title>Login</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <link href="stylesheets/plugins.css" rel="stylesheet">
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <link href="stylesheets/responsive.css" rel="stylesheet">
+    <script src="https://use.fontawesome.com/e286b68312.js"></script>
+</head>
+
+<body>
+
+    <!-- Le Wrapper -->
+    <div id="wrapper">
+
+        <!-- Page title -->
+        <section id="page-title" class="page-title-classic">
+            <div class="container">
+                <div class="breadcrumb">
+                    <ul>
+                        <li>
+                            <a href="/">Le VICATHRIEN</a>
+                        </li>
+                        <li class="active">
+                            <a href="#">Se connecter</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="page-title">
+                    <h1>Je me connecte</h1>
+                    <span>Déjà inscrit, connectez vous!</span>
+                </div>
+            </div>
+        </section>
+        <!-- end: Page title -->
+
+        <hr class="space">
+        <!--Login et mot de passe -->
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form class="formulaire" action="/users/signin" method="POST">
+                    <div class="form-group">
+                        <label class="sr-only">Email</label>
+                        <input type="text" name="email" class="form-control" placeholder="Entrer votre email">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only">Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="Entrer votre mot de passe">
+                    </div>
+                    <div class="form-inline form-group">
+                        <button class="btn btn-default" type="submit">Se connecter</button>
+                        <div class="checkbox float-right">
+                            <label class="no-margin">
+                                <input type="checkbox">
+                                <small> Se souvenir de moi</small>
+                            </label>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <small>Mot de passe oublié?</small>
+                    </a>
+                </form>
+            </div>
+        </div>
+
+        <%if(msg){ if(msg.signinFail){%>
+          <%= msg.signinFail %>
+        <%}}%>
+        <!-- Login et mot de passe-->
+        <hr class="space">
+
+        <!-- Page title -->
+        <section id="page-title" class="page-title-classic">
+            <div class="container">
+                <div class="page-title">
+                    <h1>Je me créé un compte</h1>
+                    <span>Vous êtes un ancien, créée votre compte</span>
+                </div>
+            </div>
+        </section>
+        <!-- end: Page title -->
+
+        <hr class="space">
+        <!--Login et mot de passe -->
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form class="formulaire" action="/users/signup" method="POST">
+                    <div class="form-group">
+                        <label class="sr-only">Email</label>
+                        <input type="text" name="email" class="form-control" placeholder="Entrer votre email">
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only">Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="Entrer votre mot de passe">
+                    </div>
+                    <div class="form-inline form-group">
+                        <button class="btn btn-default" type="submit">Me connecter</button>
+                    </div>
+                    <a href="#">
+                        <small>Mot de passe oublié?</small>
+                    </a>
+                </form>
+            </div>
+        </div>
+
+        <%if(msg){ if(msg.signupFail){%>
+          <%= msg.signupFail %>
+        <%}}%>
+        <!-- Login et mot de passe-->
+        <hr class="space">
+
+
+    </div>
+    <!-- end: Wrapper -->
+
+    <!-- Go to top button -->
+    <a id="goToTop">
+        <i class="fa fa-angle-up top-icon"></i>
+        <i class="fa fa-angle-up"></i>
+    </a>
+
+    <!--Plugins-->
+    <script src="javascripts/jquery.js"></script>
+    <script src="javascripts/plugins.js"></script>
+
+    <!--Template functions-->
+    <script src="javascripts/functions.js"></script>
+
+</body>
+
+</html>

@@ -47,7 +47,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="upper" for="name">Your Mail</label>
-                    <input type="email" class="form-control required email" name="email" placeholder="Enter mail" id="" aria-required="true">
+                    <input type="email" class="form-control required email" name="email" placeholder="Enter mail" id="" aria-required="true" value= <% if(user){%><%= user.credentials.email %> <%}%> >
                   </div>
                 </div>
                 <div class="col-md-6">
