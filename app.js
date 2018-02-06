@@ -31,6 +31,7 @@ var session = require('express-session');
 var index = require('./routes/index');
 // var users = require('./routes/users');
 var profile = require('./routes/profile');
+var pool_profile = require('./routes/pool_profile');
 var session = require('express-session');
 
 
@@ -62,6 +63,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/profile', profile);
 app.use('/jobopp', jobOpp);
+app.use('/pool_profile',pool_profile)
 
 
 // catch 404 and forward to error handler

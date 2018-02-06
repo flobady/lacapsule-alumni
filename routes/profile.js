@@ -32,4 +32,6 @@ router.post('/save', function(req, res, next) {
   );
 });
 
+// Affichage de la page pool-profile
+
 module.exports = router;
