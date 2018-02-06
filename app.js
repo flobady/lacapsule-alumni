@@ -18,30 +18,12 @@ mongoose.connect(
   }
 );
 
-require("./models/users");
-require("./models/profile");
-
-var index = require("./routes/index");
-// var users = require("./routes/users");
-var profile = require("./routes/profile");
-var jobOpp = require("./routes/job_opportunity");
-var session = require("express-session");
-// var login = require("./routes/login");
+require("./models/User");
 
 var index = require("./routes/index");
 var users = require('./routes/users');
 var profile = require('./routes/profile');
-var jobOpp = require('./routes/job_opportunity');
-var session = require('express-session');
-
-
-var index = require('./routes/index');
-// var users = require('./routes/users');
-var profile = require('./routes/profile');
 var pool_profile = require('./routes/pool_profile');
-var session = require('express-session');
-
-
 
 var app = express();
 
@@ -69,16 +51,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/profile', profile);
-app.use('/jobopp', jobOpp);
 app.use('/pool_profile',pool_profile)
 app.use(express.static(path.join(__dirname, "public")));
-
-
-app.use("/", index);
-// app.use("/users", users);
-app.use("/profile", profile);
-app.use("/jobopp", jobOpp);
-app.use("/users", users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

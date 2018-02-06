@@ -7,13 +7,21 @@ var session = require("express-session");
 var mongoose = require("mongoose");
 
 var UserModel = mongoose.model("users");
-var ProfileModel = mongoose.model("profiles");
 
 // Enregistrer un document
 router.post("/signup", function(req, res, next) {
   var newUser = new UserModel({
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    lastName: "",
+    firstName: "",
+    batchNumber: "",
+    batchLocation: "",
+    statusType: "",
+    myDescription: "",
+    wantedJob: "",
+    wanttoDo: "",
+    notwanttoDo: ""
   });
   // Ecriture des données
   newUser.save(function(error, user) {
@@ -23,28 +31,10 @@ router.post("/signup", function(req, res, next) {
         }
           else if(error){return res.status(422).send("error when creating new user")};
     }
-
     if(user){
-      req.session.user = {};
-      req.session.user.credentials = user;
-      var newProfile = new ProfileModel({
-        userId: user._id,
-        lastName: "",
-        firstName: "",
-        email: user.email,
-        batchNumber: "",
-        batchLocation: "",
-        statusType: "",
-        myDescription: "",
-        wantedJob: "",
-        wanttoDo: "",
-        notwanttoDo: ""
-      });
-      newProfile.save(function(error, profile) {
-        if(error){ return res.status(422).send("error when creating new user profile")};
-        req.session.user.profile = profile;
-        res.redirect("/");
-      });}
+      req.session.user = user;
+      res.redirect("/");
+    }
   });
 });
 
@@ -70,14 +60,8 @@ router.post("/signin", function(req, res, next){
     console.log("nous avons trouvé le user --", user);
      if(user){
       req.session.user = {};
-      req.session.user.credentials = user;
-      ProfileModel.findOne(
-        { userId: user._id },
-        function(error, profile){
-          console.log("nous avons trouvé le profil --", profile);
-          req.session.user.profile = profile;
-          res.render("index", { user: req.session.user });
-        });
+      req.session.user = user;
+      res.render("index", { user: req.session.user });
      }
      else
      {
