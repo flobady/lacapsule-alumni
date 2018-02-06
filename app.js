@@ -64,7 +64,6 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-<<<<<<< HEAD
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
@@ -72,9 +71,8 @@ app.use('/users', users);
 app.use('/profile', profile);
 app.use('/jobopp', jobOpp);
 app.use('/pool_profile',pool_profile)
-=======
 app.use(express.static(path.join(__dirname, "public")));
->>>>>>> 2a51874c3f5e42371c376690ce35c8c65e190a1a
+
 
 app.use("/", index);
 // app.use("/users", users);
