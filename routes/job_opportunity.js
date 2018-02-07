@@ -24,13 +24,13 @@ router.post("/publish", function(req, res, next) {
   // Ecriture des données
   newJob.save(function(error, job) {
     console.log(job);
-    res.render("job_opportunity");
+    res.render("job_opportunity", { user: req.session.user });
   });
 });
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
-  res.render("job_opportunity");
+  res.render("job_opportunity", { user: req.session.user });
 });
 
 module.exports = router;

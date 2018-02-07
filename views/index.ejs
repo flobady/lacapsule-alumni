@@ -1,55 +1,31 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
-=======
-  <head>
-    <title>Le site des anciens</title>
-    <link rel='stylesheet' href='/stylesheets/plugins.css' />
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='/stylesheets/responsive.css' />
->>>>>>> c75183830c376e52897bd9f4ca36ebab8227b4fa
 
 <head>
-  <title>
-    <%= title %>
-  </title>
+  <title>Le site des anciens</title>
   <link rel='stylesheet' href='/stylesheets/plugins.css' />
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <link rel='stylesheet' href='/stylesheets/responsive.css' />
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 </head>
 
-<<<<<<< HEAD
 <body>
-
   <% include ./partials/header %>
 
-    <h1>
-      <%= title %>
-    </h1>
-    <p>Welcome tototeeeeeeo
-      <%= title %>
-    </p>
-    <a href="/profile" class="btn btn-primary">Profil</a>
-    <a href="/users/signinup" class="btn btn-info">Sign In/Up</a>
-    <a href="/job_opportunity" class="btn btn-success">Job Opportunities</a>
-
-
-    <a href="/profile">Profil</a>
-    <div>
-      <% include ./partials/footer %>
-    </div>
-
-=======
     <%if(user){%>
-      <h1>Welcome <%= user.email %></h1>
-    <%} else { %>
-      <h1>You are not logged</h1>
-    <%}%>
+      <h1>Welcome
+        <%= user.email %>
+      </h1>
+      <%} else { %>
+        <h1>You are not logged</h1>
+        <%}%>
 
-    <div><% include ./partials/footer %></div>
->>>>>>> c75183830c376e52897bd9f4ca36ebab8227b4fa
-
+          <div>
+            <% include ./partials/footer %>
+          </div>
 </body>
 
 </html>

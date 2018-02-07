@@ -10,29 +10,20 @@ var config = require("./config");
 var mongoose = require("mongoose");
 
 var options = { server: { socketOptions: { connectTimeoutMS: 5000 } } };
-mongoose.connect(
-  config.mongoURI,
-  options,
-  function(err) {
-    console.log(err);
-  }
-);
+mongoose.connect(config.mongoURI, options, function(err) {
+  console.log(err);
+});
 
-require("./models/users");
-require("./models/profile");
-require("./models/jobOpp");
+require("./models/User");
+require("./models/jobOpp"); // ajout
+// require("./models/profile");
 
 var index = require("./routes/index");
 var users = require("./routes/users");
 var profile = require("./routes/profile");
-var job_opportunity = require("./routes/job_opportunity");
-var session = require("express-session");
-var login = require("./routes/login");
-
-var index = require("./routes/index");
-// var users = require('./routes/users');
-var profile = require("./routes/profile");
-var session = require("express-session");
+var pool_profile = require("./routes/pool_profile");
+// var admin = require("./routes/admin");
+var job_opportunity = require("./routes/job_opportunity"); // ajout
 
 var app = express();
 
@@ -55,21 +46,17 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
-<<<<<<< HEAD
 app.use("/", index);
 app.use("/users", users);
 app.use("/profile", profile);
-app.use("/job_opportunity", job_opportunity);
-app.use("/login", login);
-=======
-app.use('/', index);
-app.use('/users', users);
-app.use('/profile', profile);
-app.use('/pool_profile',pool_profile)
+app.use("/pool_profile", pool_profile);
+// app.use("/admin", admin);
+// app.use("/jobOpp", jobOpp);
+app.use("/job_opportunity", job_opportunity); // ajout
+
 app.use(express.static(path.join(__dirname, "public")));
->>>>>>> c75183830c376e52897bd9f4ca36ebab8227b4fa
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
