@@ -33,13 +33,13 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="upper" for="name">Your First Name</label>
-                    <input type="text" class="form-control required" name="firstName" placeholder="Enter first name" id="" aria-required="true">
+                    <input type="text" class="form-control required" name="firstName" placeholder="Enter first name" id="" aria-required="true" value= <% if(user){%><%= user.firstName %> <%}%> >
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="upper" for="email">Your Last Name</label>
-                    <input type="text" class="form-control required" name="lastName" placeholder="Enter last name" id="" aria-required="true">
+                    <input type="text" class="form-control required" name="lastName" placeholder="Enter last name" id="" aria-required="true" value= <% if(user){%><%= user.lastName %> <%}%> >
                   </div>
                 </div>
               </div>
@@ -47,13 +47,13 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="upper" for="name">Your Mail</label>
-                    <input type="email" class="form-control required email" name="email" placeholder="Enter mail" id="" aria-required="true">
+                    <input type="email" class="form-control required email" name="email" placeholder="Enter mail" id="" aria-required="true" value= <% if(user){%><%= user.email %> <%}%> >
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="upper" for="email">Your Status</label>
-                    <input type="text" class="form-control required email" name="statusType" placeholder="Current situation" id="" aria-required="true">
+                    <input type="text" class="form-control required email" name="statusType" placeholder="Current situation" id="" aria-required="true" value= <% if(user){%><%= user.statusType %> <%}%>>
                   </div>
                 </div>
               </div>
@@ -61,13 +61,13 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="upper" for="phone">Batch #</label>
-                    <input type="text" class="form-control required" name="batchNumber" placeholder="#" id="" aria-required="true">
+                    <input type="text" class="form-control required" name="batchNumber" placeholder="#" id="" aria-required="true" value= <% if(user){%><%= user.batchNumber %> <%}%>>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="upper" for="company">Batch Location</label>
-                    <input type="text" class="form-control required" name="batchLocation" placeholder="Location" id="" aria-required="true">
+                    <input type="text" class="form-control required" name="batchLocation" placeholder="Location" id="" aria-required="true" value= <% if(user){%><%= user.batchLocation %> <%}%>>
                   </div>
                 </div>
               </div>
@@ -75,7 +75,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="upper" for="comment">About myself</label>
-                    <textarea class="form-control required" name="myDescription" rows="9" placeholder="Enter comment" id="" aria-required="true"></textarea>
+                    <textarea class="form-control required" name="myDescription" rows="9" placeholder="Enter comment" id="" aria-required="true" > <% if(user){%><%= user.myDescription %> <%}%></textarea>
                   </div>
                 </div>
               </div>
@@ -83,7 +83,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="upper" for="comment">My dreamed Job</label>
-                    <textarea class="form-control required" name="wantedJob" rows="9" placeholder="Enter comment" id="" aria-required="true"></textarea>
+                    <textarea class="form-control required" name="wantedJob" rows="9" placeholder="Enter comment" id="" aria-required="true"> <% if(user){%><%= user.wantedJob %> <%}%> </textarea>
                   </div>
                 </div>
               </div>
@@ -91,7 +91,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="upper" for="comment">What I want to do</label>
-                    <textarea class="form-control required" name="wanttoDo" rows="9" placeholder="Enter comment" id="" aria-required="true"></textarea>
+                    <textarea class="form-control required" name="wanttoDo" rows="9" placeholder="Enter comment" id="" aria-required="true"> <% if(user){%><%= user.wanttoDo %> <%}%> </textarea>
                   </div>
                 </div>
               </div>
@@ -99,7 +99,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="upper" for="comment">What I do not want to do</label>
-                    <textarea class="form-control required" name="notwanttoDo" rows="9" placeholder="Enter comment" id="" aria-required="true"></textarea>
+                    <textarea class="form-control required" name="notwanttoDo" rows="9" placeholder="Enter comment" id="" aria-required="true"> <% if(user){%><%= user.notwanttoDo %> <%}%> </textarea>
                   </div>
                 </div>
               </div>

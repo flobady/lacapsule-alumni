@@ -5,12 +5,13 @@ var logger = require("morgan");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
 var session = require("express-session");
+var config = require("./config");
 
 var mongoose = require("mongoose");
 
 var options = { server: { socketOptions: { connectTimeoutMS: 5000 } } };
 mongoose.connect(
-  "mongodb://Victor:Momentum1992@ds225308.mlab.com:25308/lacapsule_alumni_profiles",
+  config.mongoURI,
   options,
   function(err) {
     console.log(err);
@@ -54,13 +55,21 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, 'public')));
 
+<<<<<<< HEAD
 app.use("/", index);
 app.use("/users", users);
 app.use("/profile", profile);
 app.use("/job_opportunity", job_opportunity);
 app.use("/login", login);
+=======
+app.use('/', index);
+app.use('/users', users);
+app.use('/profile', profile);
+app.use('/pool_profile',pool_profile)
+app.use(express.static(path.join(__dirname, "public")));
+>>>>>>> c75183830c376e52897bd9f4ca36ebab8227b4fa
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
+=======
+  <head>
+    <title>Le site des anciens</title>
+    <link rel='stylesheet' href='/stylesheets/plugins.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/responsive.css' />
+>>>>>>> c75183830c376e52897bd9f4ca36ebab8227b4fa
 
 <head>
   <title>
@@ -11,6 +19,7 @@
 
 </head>
 
+<<<<<<< HEAD
 <body>
 
   <% include ./partials/header %>
@@ -31,6 +40,15 @@
       <% include ./partials/footer %>
     </div>
 
+=======
+    <%if(user){%>
+      <h1>Welcome <%= user.email %></h1>
+    <%} else { %>
+      <h1>You are not logged</h1>
+    <%}%>
+
+    <div><% include ./partials/footer %></div>
+>>>>>>> c75183830c376e52897bd9f4ca36ebab8227b4fa
 
 </body>
 

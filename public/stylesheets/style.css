@@ -434,9 +434,9 @@ a {
     color: #1abc9c; }
 
 /*
-// Fonts 
+// Fonts
 h1,
-h1 a,  
+h1 a,
 h2,
 h2 a,
 h3,
@@ -5464,29 +5464,29 @@ span.rec-by {
             margin: 0;
             padding: 0;
         }
-        
+
         .twitter-widget li {
             list-style: none;
             clear: both;
         }
-        
+
         .twitter-widget li img,
         .twitter-widget li .tweets_txt {
             float: left;
             margin-bottom: 10px;
         }
-        
+
         .twitter-widget li img {
             -webkit-border-radius: 30px;
             -moz-border-radius: 30px;
             border-radius: 30px;
         }
-        
+
         .twitter-widget li .tweets_txt {
             width: 350px;
             margin-left: 10px;
         }
-        
+
         .twitter-widget li .tweets_txt span {
             font-style: italic;
             color: #666;
@@ -6242,12 +6242,12 @@ span.rec-by {
 	&.title-center:after {
 		margin: 30px auto 0;
 	}
-    
-    
 
-    
-    
-    
+
+
+
+
+
 }*/
 .heading.heading-light,
 .text-light .heading,
@@ -13410,9 +13410,9 @@ footer.background-grey .copyright-content {
     color: #fff; }
 
 /*.widget-tags .tags a {
-    
-   
-    
+
+
+
     font-size: 11px;
     letter-spacing: 1px;
 
@@ -13649,4 +13649,3 @@ body.device-xs .col-md-3 .flickr-widget img {
   color: #1abc9c !important; }
 
 /*# sourceMappingURL=colors.css.map */
-
