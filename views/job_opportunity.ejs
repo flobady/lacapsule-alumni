@@ -1,1 +1,395 @@
-JOB OPPORTUNITY
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="#" />
+    <meta name="description" content="#">
+    <!-- Document title -->
+    <title>Job opportunity</title>
+    <!-- Stylesheets & Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <link href="../stylesheets/plugins.css" rel="stylesheet">
+    <link href="../stylesheets/style.css" rel="stylesheet">
+    <link href="../stylesheets/responsive.css" rel="stylesheet">
+
+    <!-- BLOG FONT & STYLE -->
+    <link href="http://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
+    <link href="stylesheets/style-blog.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+</head>
+
+<body>
+
+    <% include ./partials/header %>
+
+        <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Page title -->
+            <section id="page-title" class="page-title-classic">
+                <div class="container">
+                    <div class="breadcrumb">
+                        <ul>
+                            <li>
+                                <a href="#">Pool de profils</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">Job opportunity</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="page-title">
+                        <h1>Job opportunity</h1>
+                        <span>Des offres d'emplois à volonté !</span>
+                    </div>
+                </div>
+            </section>
+            <!-- end: Page title -->
+
+            <section>
+                <div class="container">
+                    <!--Accordion default-->
+                    <h3>Publie une offre d'emploi</h3>
+                    <div class="accordion">
+                        <div class="ac-item">
+                            <h5 class="ac-title">
+                                <i class="fas fa-comments"></i> Cliquez ici pour ouvrir le formulaire</h5>
+                            <div class="ac-content">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <form action="/job_opportunity/publish" method="POST">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="upper" for="jobTitle">Titre du poste</label>
+                                                    <input type="text" class="form-control required" name="jobTitle" placeholder="Entrer le type de mission" id="job" aria-required="true">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="upper" for="jobCompany">Entreprise</label>
+                                                    <input type="text" class="form-control required" name="jobCompany" placeholder="Entrer le nom de l'entreprise" id="company"
+                                                        aria-required="true">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="upper" for="jobRegion">Région</label>
+                                                    <input type="text" class="form-control required" name="jobRegion" placeholder="Entrer la région" id="region" aria-required="true">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="upper" for="jobSalary">Salaire</label>
+                                                    <input type="text" class="form-control required" name="jobSalary" placeholder="Salaire proposé" id="salary" aria-required="true">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="upper" for="contract">Type de contrat de travail</label>
+                                                <select name="jobContractType">
+                                                    <option>CDI</option>
+                                                    <option>Freelance</option>
+                                                    <option>CDD</option>
+                                                    <option>Interim</option>
+                                                    <option>Green card</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="upper" for="info">Votre annonce</label>
+                                                    <textarea class="form-control required" name="jobInfo" rows="9" placeholder="Taper votre annonce ici" id="info" aria-required="true"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group text-center">
+                                                    <button class="btn btn-default" type="submit">
+                                                        <i class="fa fa-paper-plane"></i>&nbsp;Publier</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END: Accordion default-->
+                </div>
+            </section>
+
+            <section class="background-grey">
+                <div class="container">
+                    <!-- ICI -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fab fa-js"></i> Développeur Javascript Junior - CDI - Aubervilliers</div>
+                                <div class="panel-body">
+                                    <span class="post-meta-date">
+                                        <span class="post-author">
+                                            <img src="http://via.placeholder.com/2x2">
+                                            <a href="#">Publié par Athmane le 06.02.2018</a>
+                                        </span>
+                                        <br>
+                                        <br>
+                                        <h4>
+                                            <a href="#">Altran recherche un développeur Web Développement (Front / Back end) </a>
+                                        </h4>
+                                        <p>Vous recherchez une expérience intense et enrichissante, dans un environnement où
+                                            l'avancement technologique des projets est un 'must'. L'organisme de formation
+                                            qui souhaite vous accueillir, Le Comptoir des Langues est leader de la formation
+                                            en langues dans les entreprises. Créateur d'une technique de langues déposée
+                                            et de produits pédagogiques en ligne, le Comptoir des Langues est doté des normes
+                                            de qualité ISO/AFNOR et de la distinction d'excellence de la Chambre de Commerce
+                                            et d'Industrie de Paris.</p>
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="#" class="item-link">Lire toute l'annonce
+                                        <i class="fa fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fab fa-node-js"></i> Développeur Backend - Mission longue - Sydney - AUSTRALIE</div>
+                                <div class="panel-body">
+                                    <span class="post-meta-date">
+                                        <span class="post-author">
+                                            <img src="http://via.placeholder.com/2x2">
+                                            <a href="#">Publié par Athmane le 10.03.2018</a>
+                                        </span>
+                                        <br>
+                                        <br>
+                                        <h4>
+                                            <a href="#">Développeur (Back end) 2 ans d'expériences min. Sydney - AUSTRALIE</a>
+                                        </h4>
+                                        <p>Dans le cadre d'un projet de refonte de ses produits pédagogiques en ligne, Le Comptoir
+                                            des Langues recherche actuellement un(e) stagiaire en Web Développement (Front
+                                            / Back end). Ce stage vous permettra de renforcer et d'améliorer votre capacité
+                                            à coder différents langages et d’assister le chef de projet dans la conduite
+                                            des différentes missions. Développement d’outils pédagogiques en coordination
+                                            avec le directeur artistique Développement, intégration web (cross-plateform
+                                            / responsive design) Gestion de bases de données clients Travail en collaboration
+                                            avec le service Infographie Le profil recherché Connaissances souhaitées ou en
+                                            formation avancée sur : HTML5 / CSS3 (confirmé) JavaScript (confirmé), jQuery
+                                            PHP / MySQL Bootstrap Niveau d'études : à partir de bac +2 - Formation web développement
+                                            - Excellent niveau d’anglais à l’écrit</p>
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="#" class="item-link">Lire toute l'annonce
+                                        <i class="fa fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END: Panel with footer-->
+
+                    <hr class="space">
+
+                    <!-- ICI -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fab fa-js"></i> Développeur Javascript Junior - CDI - Aubervilliers</div>
+                                <div class="panel-body">
+                                    <span class="post-meta-date">
+                                        <span class="post-author">
+                                            <img src="http://via.placeholder.com/2x2">
+                                            <a href="#">Publié par Athmane le 06.02.2018</a>
+                                        </span>
+                                        <br>
+                                        <br>
+                                        <h4>
+                                            <a href="#">Altran recherche un développeur Web Développement (Front / Back end) </a>
+                                        </h4>
+                                        <p>Vous recherchez une expérience intense et enrichissante, dans un environnement où
+                                            l'avancement technologique des projets est un 'must'. L'organisme de formation
+                                            qui souhaite vous accueillir, Le Comptoir des Langues est leader de la formation
+                                            en langues dans les entreprises. Créateur d'une technique de langues déposée
+                                            et de produits pédagogiques en ligne, le Comptoir des Langues est doté des normes
+                                            de qualité ISO/AFNOR et de la distinction d'excellence de la Chambre de Commerce
+                                            et d'Industrie de Paris.</p>
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="#" class="item-link">Lire toute l'annonce
+                                        <i class="fa fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fab fa-js"></i> Développeur Javascript Junior - CDI - Aubervilliers</div>
+                                <div class="panel-body">
+                                    <span class="post-meta-date">
+                                        <span class="post-author">
+                                            <img src="http://via.placeholder.com/2x2">
+                                            <a href="#">Publié par Athmane le 06.02.2018</a>
+                                        </span>
+                                        <br>
+                                        <br>
+                                        <h4>
+                                            <a href="#">Altran recherche un développeur Web Développement (Front / Back end) </a>
+                                        </h4>
+                                        <p>Vous recherchez une expérience intense et enrichissante, dans un environnement où
+                                            l'avancement technologique des projets est un 'must'. L'organisme de formation
+                                            qui souhaite vous accueillir, Le Comptoir des Langues est leader de la formation
+                                            en langues dans les entreprises. Créateur d'une technique de langues déposée
+                                            et de produits pédagogiques en ligne, le Comptoir des Langues est doté des normes
+                                            de qualité ISO/AFNOR et de la distinction d'excellence de la Chambre de Commerce
+                                            et d'Industrie de Paris.</p>
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="#" class="item-link">Lire toute l'annonce
+                                        <i class="fa fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END: Panel with footer-->
+
+                    <hr class="space">
+
+                    <!-- ICI -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fab fa-js"></i> Développeur Javascript Junior - CDI - Aubervilliers</div>
+                                <div class="panel-body">
+                                    <span class="post-meta-date">
+                                        <span class="post-author">
+                                            <img src="http://via.placeholder.com/2x2">
+                                            <a href="#">Publié par Athmane le 06.02.2018</a>
+                                        </span>
+                                        <br>
+                                        <br>
+                                        <h4>
+                                            <a href="#">Altran recherche un développeur Web Développement (Front / Back end) </a>
+                                        </h4>
+                                        <p>Vous recherchez une expérience intense et enrichissante, dans un environnement où
+                                            l'avancement technologique des projets est un 'must'. L'organisme de formation
+                                            qui souhaite vous accueillir, Le Comptoir des Langues est leader de la formation
+                                            en langues dans les entreprises. Créateur d'une technique de langues déposée
+                                            et de produits pédagogiques en ligne, le Comptoir des Langues est doté des normes
+                                            de qualité ISO/AFNOR et de la distinction d'excellence de la Chambre de Commerce
+                                            et d'Industrie de Paris.</p>
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="#" class="item-link">Lire toute l'annonce
+                                        <i class="fa fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fab fa-js"></i> Développeur Javascript Junior - CDI - Aubervilliers</div>
+                                <div class="panel-body">
+                                    <span class="post-meta-date">
+                                        <span class="post-author">
+                                            <img src="http://via.placeholder.com/2x2">
+                                            <a href="#">Publié par Athmane le 06.02.2018</a>
+                                        </span>
+                                        <br>
+                                        <br>
+                                        <h4>
+                                            <a href="#">Altran recherche un développeur Web Développement (Front / Back end) </a>
+                                        </h4>
+                                        <p>Vous recherchez une expérience intense et enrichissante, dans un environnement où
+                                            l'avancement technologique des projets est un 'must'. L'organisme de formation
+                                            qui souhaite vous accueillir, Le Comptoir des Langues est leader de la formation
+                                            en langues dans les entreprises. Créateur d'une technique de langues déposée
+                                            et de produits pédagogiques en ligne, le Comptoir des Langues est doté des normes
+                                            de qualité ISO/AFNOR et de la distinction d'excellence de la Chambre de Commerce
+                                            et d'Industrie de Paris.</p>
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="#" class="item-link">Lire toute l'annonce
+                                        <i class="fa fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END: Panel with footer-->
+
+                    <hr class="space">
+
+                    <!-- Pagination -->
+                    <div class="pagination pagination-simple">
+                        <ul>
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">
+                                        <i class="fa fa-angle-left"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="#">1</a>
+                            </li>
+                            <li>
+                                <a href="#">2</a>
+                            </li>
+                            <li>
+                                <a href="#">3</a>
+                            </li>
+                            <li>
+                                <a href="#">4</a>
+                            </li>
+                            <li>
+                                <a href="#">5</a>
+                            </li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">
+                                        <i class="fa fa-angle-right"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end: Pagination -->
+                </div>
+            </section>
+
+            <% include ./partials/footer %>
+
+        </div>
+        <!-- end: Wrapper -->
+
+        <!-- Go to top button -->
+        <a id="goToTop">
+            <i class="fa fa-angle-up top-icon"></i>
+            <i class="fa fa-angle-up"></i>
+        </a>
+        <!--Plugins-->
+        <script src="../javascripts/jquery.js"></script>
+        <script src="../javascripts/plugins.js"></script>
+
+        <!--Template functions-->
+        <script src="../javascripts/functions.js"></script>
+
+</body>
+
+</html>

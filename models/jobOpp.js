@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const jobOppSchema = new Schema ({
+const jobSchema = new Schema({
   postedBy: String,
   postDate: String,
   jobTitle: String,
@@ -10,6 +10,6 @@ const jobOppSchema = new Schema ({
   jobSalary: String,
   jobContractType: String,
   jobInfo: String
-})
+});
 
-mongoose.model('users', userSchema);
+mongoose.model("jobs", jobSchema);

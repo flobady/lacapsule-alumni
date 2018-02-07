@@ -19,11 +19,12 @@ mongoose.connect(
 
 require("./models/users");
 require("./models/profile");
+require("./models/jobOpp");
 
 var index = require("./routes/index");
 var users = require("./routes/users");
 var profile = require("./routes/profile");
-var jobOpp = require("./routes/job_opportunity");
+var job_opportunity = require("./routes/job_opportunity");
 var session = require("express-session");
 var login = require("./routes/login");
 
@@ -58,7 +59,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", index);
 app.use("/users", users);
 app.use("/profile", profile);
-app.use("/jobopp", jobOpp);
+app.use("/job_opportunity", job_opportunity);
 app.use("/login", login);
 
 // catch 404 and forward to error handler
