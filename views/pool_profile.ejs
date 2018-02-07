@@ -15,7 +15,8 @@
   <link href="stylesheets/style.css" rel="stylesheet">
   <link href="stylesheets/responsive.css" rel="stylesheet">
   <link href="stylesheets/pool-profile.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -29,7 +30,7 @@
       <%
         for(var i=0; i<userList.length; i++) {
         %>
-      <div>
+
         <div class="row col-md-10 col-md-offset-1">
           <img class="user_picture" src="/images/user_profile.svg" alt="avatar">
           <div class="separation">
@@ -39,14 +40,14 @@
           </div>
         </div>
         <hr class="spaceprofile">
-      </div>
+
       <%
       }
       %>
 
     </div>
 
-    <hr class="space">
+    <hr class="spacebis">
 
     <% include ./partials/footer %>
 
