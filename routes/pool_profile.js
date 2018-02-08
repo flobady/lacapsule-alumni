@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 
-var Profile = mongoose.model('profiles');
+var User = mongoose.model('users');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  Profile.find({},
+  User.find({},
     function(err, list){
       res.render('pool_profile', { user: req.session.user, userList: list } );
   });
