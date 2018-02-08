@@ -19,3 +19,4 @@ var userSchema = new mongoose.Schema({
 
 // Création d'un modèle, Lier le schéma au modèle
 mongoose.model("users", userSchema);
+mongoose.model("approvedUsers", userSchema);

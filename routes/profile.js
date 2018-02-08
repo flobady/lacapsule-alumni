@@ -6,7 +6,7 @@ var requireLogin = require('../middlewares/requireLogin');
 
 var UserModel = mongoose.model("users");
 
-router.get('/', function(req, res, next){
+router.get('/', requireLogin, function(req, res, next){
   console.log("la session du user -- ", req.session.user);
   res.render('profile', { user: req.session.user });
 });

@@ -51,6 +51,13 @@
           </li>
 
           <%}%>
+
+          <%if(user){%>
+          <%if(user.statusType === "admin"){%>
+          <li class="#">
+            <a href="/admin" class="btn btn-info">ADMIN</a>
+          </li>
+          <%}}%>
         </ul>
       </nav>
     </div>
