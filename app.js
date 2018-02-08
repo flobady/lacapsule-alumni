@@ -21,14 +21,39 @@ mongoose.connect(
 );
 
 require("./models/User");
+require("./models/forum/message");
+require("./models/forum/chat");
 
 var index = require("./routes/index");
 var users = require('./routes/users');
 var profile = require('./routes/profile');
 var pool_profile = require('./routes/pool_profile');
 var admin = require('./routes/admin');
+var forum = require('./routes/forum');
 
 var app = express();
+
+// -------------------------------------------
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+var Messages = mongoose.model('messages');
+
+io.on('connection', function(socket){
+  console.log("user connected");
+  socket.on('chat message', function(msg){
+    console.log("message",msg)
+    // on trigger le save en db:
+    var newMessage = new Messages({
+      chatId: msg.chatId,
+      postedBy: msg.postedBy,
+      messageContent: msg.messageContent
+    }).save(function(error, message){
+      console.log("c'est dans la db");
+    });
+    io.emit('chat message', msg);
+  });
+});
+// -------------------------------------------
 
 app.use(fileUpload());
 
@@ -58,6 +83,7 @@ app.use('/users', users);
 app.use('/profile', profile);
 app.use('/pool_profile',pool_profile);
 app.use('/admin',admin);
+app.use('/forum',forum);
 app.use(express.static(path.join(__dirname, "public")));
 
 // catch 404 and forward to error handler
@@ -78,5 +104,6 @@ app.use(function(err, req, res, next) {
   res.render("error");
 });
 
+server.listen(3000);
 
 module.exports = app;

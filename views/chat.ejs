@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <title>Forum</title>
+  <link rel='stylesheet' href='/stylesheets/plugins.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/responsive.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <% include ./partials/header %>
+
+  <div class="container">
+    <ul id="messages">
+      <% for(let message of messages){%>
+        <li class="messages"> <%= message.postedBy %> : <%= message.messageContent %> </li>
+      <%}%>
+    </ul>
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+
+    <input id="pseudo" type="hidden" value=<%=user.email%> />
+  </div>
+
+  <% include ./partials/footer %>
+
+  <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script>
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var chatId = url.searchParams.get("id");
+
+    var pseudo = document.getElementById('pseudo').value;
+    $(function () {
+      var socket = io();
+      $('form').submit(function(){
+        console.log("on soumet");
+        var message ={
+          postedBy: "polo",
+          chatId: chatId,
+          messageContent: $('#m').val()
+          };
+        socket.emit('chat message', message );
+        $('#m').val('');
+        return false;
+      });
+      socket.on('chat message', function(msg){
+        $('#messages').append($('<li>').text(pseudo +': '+msg.messageContent));
+        window.scrollTo(0, document.body.scrollHeight);
+      });
+    });
+  </script>
+</body>
+</html>

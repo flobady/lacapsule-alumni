@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Le site des anciens</title>
+    <link rel='stylesheet' href='/stylesheets/plugins.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/responsive.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <% include ./partials/header %>
+
+    <div class="container">
+      <h6>Bienvenue dans le forum</h6>
+
+      <a href="/forum/chat_add" class="btn btn-primary">Create a chat</a>
+
+      <a href="/forum/chat?id=37" class="btn"> To the only chat </a>
+
+      <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+          <ul class="list-group">
+
+            <%for(let chat of chats) {%>
+            <li class="list-group-item justify-content-between">
+              <%= chat.topicName %>
+            </li>
+            <%}%>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div><% include ./partials/footer %></div>
+  </body>
+</html>
