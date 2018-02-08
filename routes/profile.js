@@ -3,15 +3,14 @@ var express= require('express');
 var fileUpload = require('express-fileupload');
 var router = express.Router();
 var session = require("express-session");
+var requireLogin = require('../middlewares/requireLogin');
 
 var UserModel = mongoose.model("users");
 
-
-router.get('/', function(req, res, next){
+router.get('/', requireLogin, function(req, res, next){
   console.log("la session du user -- ", req.session.user);
   res.render('profile', { user: req.session.user });
 });
-
 
 router.post('/save', function(req, res, next) {
   console.log("le user id est", req.session.user._id);

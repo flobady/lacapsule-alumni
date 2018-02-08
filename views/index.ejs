@@ -10,13 +10,11 @@
   </head>
   <body>
     <% include ./partials/header %>
-
     <%if(user){%>
       <h1>Welcome <%= user.email %></h1>
     <%} else { %>
       <h1>You are not logged</h1>
     <%}%>
-
     <div><% include ./partials/footer %></div>
   </body>
 </html>

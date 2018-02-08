@@ -7,33 +7,43 @@ var session = require("express-session");
 var mongoose = require("mongoose");
 
 var UserModel = mongoose.model("users");
+var ApprovedUserModel = mongoose.model("approvedUsers");
 
 // Enregistrer un document
 router.post("/signup", function(req, res, next) {
-  var newUser = new UserModel({
-    email: req.body.email,
-    password: req.body.password,
-    lastName: "",
-    firstName: "",
-    batchNumber: "",
-    batchLocation: "",
-    statusType: "",
-    myDescription: "",
-    wantedJob: "",
-    wanttoDo: "",
-    notwanttoDo: ""
-  });
-  // Ecriture des données
-  newUser.save(function(error, user) {
-    if(error){
-        if(error.code === 11000 ) {
-          res.render("login", {msg: {signupFail: "Email already in use"}})
-        }
-          else if(error){return res.status(422).send("error when creating new user")};
-    }
+  ApprovedUserModel.findOne({
+    email: req.body.email
+  }, function(error, user){
+    if(error){return res.status(422).send("error when finding authorized users")};
     if(user){
-      req.session.user = user;
-      res.redirect("/");
+      var newUser = new UserModel({
+        email: req.body.email,
+        password: req.body.password,
+        lastName: "",
+        firstName: "",
+        batchNumber: "",
+        batchLocation: "",
+        statusType: "",
+        myDescription: "",
+        wantedJob: "",
+        wanttoDo: "",
+        notwanttoDo: ""
+      });
+      // Ecriture des données
+      newUser.save(function(error, user) {
+        if(error){
+            if(error.code === 11000 ) {
+              res.render("login", {msg: {signupFail: "Email already in use"}})
+            }
+              else if(error){return res.status(422).send("error when creating new user")};
+        }
+        if(user){
+          req.session.user = user;
+          res.redirect("/");
+        }
+      });
+    } else {
+      res.render("login", {msg: {signupFail: "You must be an alumni to register"}});
     }
   });
 });
