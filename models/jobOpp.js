@@ -6,10 +6,14 @@ const jobSchema = new Schema({
   postDate: String,
   jobTitle: String,
   jobCompany: String,
-  jobRegion: String,
+  jobCity: String,
   jobSalary: String,
   jobContractType: String,
-  jobInfo: String
+  jobExperience: String, // new ajout expérience minimum
+  jobResume: String, // new ajout résumé du poste
+  jobInfo: String,
+  jobContact: String, // new ajout
+  jobReference: String // new ajout
 });
 
 mongoose.model("jobs", jobSchema);
