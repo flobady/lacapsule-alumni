@@ -224,7 +224,7 @@ iframe {
 
 /* Sections */
 section {
-  padding: 80px 0;
+  padding: 40px 0;
   position: relative;
   z-index: auto;
   width: 100%;
@@ -5995,7 +5995,7 @@ span.rec-by {
     color: #ffffff !important;
     border-width: 0; }
   .btn + .btn {
-    margin-left: 2px; }
+    margin-left: 10px; }
 
 @media (max-width: 991px) {
   .btn.btn-reveal.btn-reveal-left:hover span {
@@ -13095,6 +13095,8 @@ a.toggle-item:active {
     opacity: 1; }
   .image-hover-zoom:hover img {
     opacity: .3; }
+
+
 
 /* ----------------------------------------------------------------
     YT PLAYER (YOUTUBE PLAYER)

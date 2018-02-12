@@ -14,7 +14,13 @@ var userSchema = new mongoose.Schema({
   myDescription: String,
   wantedJob: String,
   wanttoDo: String,
-  notwanttoDo: String
+  notwanttoDo: String,
+  html_level: Number,
+  css_level: Number,
+  bootstrap_level: Number,
+  javascript_level: Number,
+  react_level: Number,
+  node_level: Number,
 });
 
 // Création d'un modèle, Lier le schéma au modèle

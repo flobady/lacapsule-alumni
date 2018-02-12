@@ -26,6 +26,8 @@ var index = require("./routes/index");
 var users = require('./routes/users');
 var profile = require('./routes/profile');
 var pool_profile = require('./routes/pool_profile');
+var page_profile = require('./routes/page_profile');
+var trombinoscope_5 = require('./routes/trombinoscope_5');
 var admin = require('./routes/admin');
 
 var app = express();
@@ -57,6 +59,8 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/profile', profile);
 app.use('/pool_profile',pool_profile);
+app.use('/page_profile',page_profile);
+app.use('/trombinoscope_5',trombinoscope_5);
 app.use('/admin',admin);
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -77,6 +81,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
-
 
 module.exports = app;
