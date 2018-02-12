@@ -5,7 +5,8 @@ var mongoose = require("mongoose");
 var messageSchema = new mongoose.Schema({
   chatId: String,
   postedBy: String,
-  messageContent: String
+  messageContent: String,
+  messageCreationDate: Date
 });
 
 // Création d'un modèle, Lier le schéma au modèle
