@@ -9,17 +9,4 @@ router.get('/', function(req, res, next) {
   res.render('index', { user: req.session.user });
 });
 
-// router.get('/profile', function(req, res, next) {
-//   res.render('profile', );
-// });
-//
-// router.get('/login', function(req, res, next) {
-//   res.render('login', );
-// });
-//
-// router.get('/trombinoscope', function(req, res, next) {
-//   res.render('trombinoscope', );
-// });
-
-
 module.exports = router;

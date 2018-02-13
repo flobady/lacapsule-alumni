@@ -1,0 +1,25 @@
+.login_box {
+  margin-top: 8px;
+  margin-left: 10px;
+}
+.login_box2 {
+  margin-top: 3px;
+  margin-left: 10px;
+}
+
+.login_box3 {
+  margin-top: 10px;
+}
+
+.fond_de_page {
+  background-color: #596275;
+}
+
+.couleur_bouton {
+  background-color: #0c2461 !important;
+  border-color: white !important;
+}
+
+.bordure_haute {
+  margin-top: 20px;
+}
