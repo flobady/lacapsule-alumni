@@ -11,9 +11,10 @@
   <title>Profile</title>
   <!-- Stylesheets & Fonts -->
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
-  <link href="stylesheets/plugins.css" rel="stylesheet">
-  <link href="stylesheets/style.css" rel="stylesheet">
-  <link href="stylesheets/responsive.css" rel="stylesheet">
+  <link href="../stylesheets/plugins.css" rel="stylesheet">
+  <link href="../stylesheets/style.css" rel="stylesheet">
+  <link href="../stylesheets/responsive.css" rel="stylesheet">
+  <link href="../stylesheets/profile.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
@@ -39,8 +40,10 @@
                 <div class="col-md-12">
                   <label class="upper" for="name">YOUR PICTURE</label>
                   <form ref="uploadForm" id="uploadForm" action="/profile/upload" method="post" encType="multipart/form-data">
-                    <input type="file" name="sampleFile">
-                    <input type="submit" value="Submit">
+                    <div class="row">
+                      <input class="btn btn-outline-secondary decalage" type="file" name="sampleFile">
+                      <input class="btn btn-outline-secondary" type="submit" value="Submit">
+                    </div>
                   </form>
                 </div>
               </div>
@@ -77,15 +80,14 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="upper" for="email">Your Status</label>
-                      <input type="text" class="form-control required" name="statusType" placeholder="Current situation" id="" aria-required="true" value=<% if(user){%>
+                      <!-- <input type="text" class="form-control required" name="statusType" placeholder="Current situation" id="" aria-required="true" value=<% if(user){%>
                       <%= user.statusType %>
-                        <%}%>>
-                          <!-- <select type="text" class="form-control required" name="statusType" class="custom-select" aria-required="true">>
-                      <option selected >Current situation</option>
-                      <option value=<% if(user){%><%= user.statusType %> <%}%>>Student</option>
-                      <option value=<% if(user){%><%= user.statusType %> <%}%>>Employed</option>
-                      <option value=<% if(user){%><%= user.statusType %> <%}%>>Looking for opportunities</option>
-                    </select> -->
+                        <%}%>> -->
+                        <select type="text" class="form-control required" name="statusType" class="custom-select" aria-required="true">>
+                          <option selected value="Student">Student</option>
+                          <option value="Employed">Employed</option>
+                          <option value="Looking for opportunities">Looking for opportunities</option>
+                        </select>
                     </div>
                   </div>
                 </div>
@@ -93,7 +95,7 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="upper" for="phone">Batch #</label>
-                      <input type="text" class="form-control required" name="batchNumber" placeholder="#" id="" aria-required="true" value=<% if(user){%>
+                      <input type="number" min="1" max="5" class="form-control required" name="batchNumber" placeholder="#" id="" aria-required="true" value=<% if(user){%>
                       <%= user.batchNumber %>
                         <%}%>>
                     </div>
@@ -101,23 +103,78 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label class="upper" for="company">Batch Location</label>
-                      <input type="text" class="form-control required" name="batchLocation" placeholder="Location" id="" aria-required="true" value=<% if(user){%>
+                      <!-- <input type="text" class="form-control required" name="batchLocation" placeholder="Location" id="" aria-required="true" value=<% if(user){%>
                       <%= user.batchLocation %>
-                        <%}%>>
-                          <!-- <select type="text" class="form-control required" name="batchLocation" class="custom-select" aria-required="true">>
-                      <option selected >Current situation</option>
-                      <option value=<% if(user){%><%= user.batchLocation %> <%}%>>Paris</option>
-                      <option value=<% if(user){%><%= user.batchLocation %> <%}%>>Lyon</option>
-                    </select> -->
+                        <%}%>> -->
+                      <select id="Location_du_batch" type="text" class="form-control required" placeholder="Location" name="batchLocation" class="custom-select" aria-required="true">>
+                        <option selected value="Paris">Paris</option>
+                        <option value="Lyon">Lyon</option>
+                      </select>
 
                     </div>
                   </div>
                 </div>
+
+<!-- Début d'ajout des badges pour les skills -->
+
+<!-- <div class="row">
+  <div role="alert" class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span> </button>
+    <strong>Warning!</strong> Better check yourself, you're not looking too good. </div>
+  <div role="alert" class="alert alert-info alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span> </button>
+    <strong>Warning!</strong> Better check yourself, you're not looking too good. </div>
+</div> -->
+
+<!-- Fin d'ajout des badges pour les skills -->
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="upper" for="name">HTML proficiency</label>
+                      <input type="number" min="0" max="100" class="form-control required" name="html_level" placeholder="0-100" id="" aria-required="true" value="">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="upper" for="name">CSS proficiency</label>
+                      <input type="number" min="0" max="100" class="form-control required" name="css_level" placeholder="0-100" id="" aria-required="true" value="">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="upper" for="email">Boostrap proficiency</label>
+                      <input type="number" min="0" max="100" class="form-control required" name="bootstrap_level" placeholder="0-100" id="" aria-required="true" value="">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="upper" for="name">JavaScript proficiency</label>
+                      <input type="number" min="0" max="100" class="form-control required" name="javascript_level" placeholder="0-100" id="" aria-required="true" value="">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="upper" for="name">React.js proficiency</label>
+                      <input type="number" min="0" max="100" class="form-control required" name="react_level" placeholder="0-100" id="" aria-required="true" value="">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="upper" for="email">Node.js proficiency</label>
+                      <input type="number" min="0" max="100" class="form-control required" name="node_level" placeholder="0-100" id="" aria-required="true" value="">
+                    </div>
+                  </div>
+                </div>
+
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
                       <label class="upper" for="comment">About myself</label>
-                      <textarea class="form-control required" name="myDescription" rows="9" placeholder="Enter comment" id="" aria-required="true"> <% if(user){%><%= user.myDescription %> <%}%></textarea>
+                      <textarea class="form-control required" name="myDescription" rows="5" placeholder="Enter comment" id="" aria-required="true"> <% if(user){%><%= user.myDescription %> <%}%></textarea>
                     </div>
                   </div>
                 </div>
@@ -125,7 +182,7 @@
                   <div class="col-md-12">
                     <div class="form-group">
                       <label class="upper" for="comment">My dreamed Job</label>
-                      <textarea class="form-control required" name="wantedJob" rows="9" placeholder="Enter comment" id="" aria-required="true"> <% if(user){%><%= user.wantedJob %> <%}%> </textarea>
+                      <textarea class="form-control required" name="wantedJob" rows="5" placeholder="Enter comment" id="" aria-required="true"> <% if(user){%><%= user.wantedJob %> <%}%> </textarea>
                     </div>
                   </div>
                 </div>
@@ -133,7 +190,7 @@
                   <div class="col-md-12">
                     <div class="form-group">
                       <label class="upper" for="comment">What I want to do</label>
-                      <textarea class="form-control required" name="wanttoDo" rows="9" placeholder="Enter comment" id="" aria-required="true"> <% if(user){%><%= user.wanttoDo %> <%}%> </textarea>
+                      <textarea class="form-control required" name="wanttoDo" rows="5" placeholder="Enter comment" id="" aria-required="true"> <% if(user){%><%= user.wanttoDo %> <%}%> </textarea>
                     </div>
                   </div>
                 </div>
@@ -141,7 +198,7 @@
                   <div class="col-md-12">
                     <div class="form-group">
                       <label class="upper" for="comment">What I do not want to do</label>
-                      <textarea class="form-control required" name="notwanttoDo" rows="9" placeholder="Enter comment" id="" aria-required="true"> <% if(user){%><%= user.notwanttoDo %> <%}%> </textarea>
+                      <textarea class="form-control required" name="notwanttoDo" rows="5" placeholder="Enter comment" id="" aria-required="true"> <% if(user){%><%= user.notwanttoDo %> <%}%> </textarea>
                     </div>
                   </div>
                 </div>
@@ -159,8 +216,6 @@
           <hr class="space">
 
           <% include ./partials/footer %>
-
-
 
         </div>
         <!-- end: Wrapper -->

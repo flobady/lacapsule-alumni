@@ -26,7 +26,13 @@ UserModel.findOneAndUpdate(
       myDescription: req.body.myDescription,
       wantedJob: req.body.wantedJob,
       wanttoDo: req.body.wanttoDo,
-      notwanttoDo: req.body.notwanttoDo
+      notwanttoDo: req.body.notwanttoDo,
+      html_level: req.body.html_level,
+      css_level: req.body.css_level,
+      bootstrap_level: req.body.bootstrap_level,
+      javascript_level: req.body.javascript_level,
+      react_level: req.body.react_level,
+      node_level: req.body.node_level
     },
     function (err, user) {
       console.log("uuuu", user);
@@ -35,7 +41,7 @@ UserModel.findOneAndUpdate(
         { _id: req.session.user._id }, function(err, user){
           console.log("user est maintenant : --",req.session.user);
           req.session.user = user;
-          res.render('profile', { user: req.session.user });
+          res.render('page_profile', { user: req.session.user });
         })
       })
 });
