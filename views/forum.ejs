@@ -16,23 +16,6 @@
 
       <a href="/forum/chat_add" class="btn btn-primary">Create a chat</a>
 
-      <a href="/forum/chat?id=37" class="btn"> To the only chat </a>
-
-      <div class="row">
-        <div class="col-sm-6 offset-sm-3">
-          <ul class="list-group">
-            <%for(let chat of chats) {%>
-            <li class="list-group-item justify-content-between">
-              <%= chat._id %>
-              <%= chat.chatName %>
-              <%= chat.chatDescription %>
-              <a href="/forum/chat?id=<%= chat._id %>"><%= chat.chatName %></a>
-            </li>
-            <%}%>
-          </ul>
-        </div>
-      </div>
-
         <div style="float:left;width:100px;border-right:1px solid black;height:300px;padding:10px;overflow:scroll-y;">
           <b>ROOMS</b>
           <div id="rooms"></div>
@@ -68,27 +51,37 @@
       // socket.emit('adduser', prompt("What's your name?"));
     });
 
+      // listener, whenever the server emits 'initiatechat', this loads old messages
+      socket.on('initiatechat', function(oldMessages){
+        oldMessages.forEach(function(message){
+          return $('#conversation').append('<b>'+ message.postedBy + ':</b> ' + message.messageContent + '<br>');
+        });
+      });
+
       // listener, whenever the server emits 'updatechat', this updates the chat body
-      socket.on('updatechat', function (username, data) {
-        $('#conversation').append('<b>'+username + ':</b> ' + data + '<br>');
+      socket.on('updatechat', function(username, data) {
+        console.log("cuiiiir");
+         $('#conversation').append('<b>'+ username + ':</b> ' + data + '<br>');
       });
 
       // listener, whenever the server emits 'updaterooms', this updates the room the client is in
       socket.on('updaterooms', function(rooms, current_room) {
         $('#rooms').empty();
         $.each(rooms, function(key, room) {
-          if(room == current_room){
-            $('#rooms').append('<div>' + room + '</div>');
+          if(room._id == current_room){
+            $('#rooms').append('<div>' + room.chatName + '</div>');
           }
           else {
-            $('#rooms').append('<div><a href="#" onclick="switchRoom(\''+room+'\')">' + room + '</a></div>');
+            $('#rooms').append('<div><a href="#" onclick="switchRoom(\''+room._id+'\')">' + room.chatName + '</a></div>');
           }
         });
       });
 
       function switchRoom(room){
+        console.log("on va vers la room -- ", room);
         socket.emit('switchRoom', room);
         $('#conversation').empty();
+        // apres avoir cleaner on load les anciens messages
       }
 
       // on load of page
@@ -98,21 +91,22 @@
           var message = $('#data').val();
           $('#data').val('');
 
-          var url_string = window.location.href;
-          var url = new URL(url_string);
-          var chatId = url.searchParams.get("id");
+          // var url_string = window.location.href;
+          // var url = new URL(url_string);
+          // var chatId = url.searchParams.get("id");
           var pseudo = document.getElementById('pseudo').value;
 
           var messageData = {
-            chatId: chatId,
+            chatId: "",
             postedBy: pseudo,
             messageContent: message,
-            messageCreationDate: new Date().toJSON().slice(0,10)
+            messageCreationDate: new Date()
           };
 
           console.log("objet message",messageData);
           // tell server to execute 'sendchat' and send along one parameter
-          socket.emit('sendchat', message);
+          // socket.emit('sendchat', message);
+          socket.emit('sendchat', messageData);
         });
 
         // when the client hits ENTER on their keyboard
