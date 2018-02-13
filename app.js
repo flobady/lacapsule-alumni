@@ -42,17 +42,6 @@ var Chats = mongoose.model('chats');
 // usernames which are currently connected to the chat
 var usernames = {};
 
-// rooms which are currently available in chat
-// var rooms = [];
-// async function getChatsFromDb() {
-// await Chats.find({},function(error, chats){
-//   console.log("les chats sont ",chats);
-//   if(error){return res.status(422).send("error when fetching chats")};
-//   return rooms = chats;
-// });
-// };
-// getChatsFromDb();
-
 io.sockets.on('connection', function (socket) {
   console.log("je suis connecte!");
 
@@ -83,11 +72,6 @@ io.sockets.on('connection', function (socket) {
       }
     });
   });
-
-
-
-
-
 
   // when the client emits 'sendchat', this listens and executes
   socket.on('sendchat', function (data) {
