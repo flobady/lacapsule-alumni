@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="#" />
+    <meta name="description" content="#">
+    <!-- Document title -->
+    <title>Le forum</title>
+    <!-- Stylesheets & Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <link href="../stylesheets/plugins.css" rel="stylesheet">
+    <link href="../stylesheets/style.css" rel="stylesheet">
+    <link href="../stylesheets/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <% include ./partials/header %>
+
+        <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Page title -->
+            <section id="page-title" class="page-title-classic" style="background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);">
+                <div class="container">
+                    <div class="breadcrumb">
+                        <ul>
+                            <li>
+                                <a href="#">Pool de profils</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">Le forum</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="page-title">
+                        <h1>Le forum</h1>
+                        <span>Des discussions à n'en plus finir !</span>
+                    </div>
+                </div>
+            </section>
+            <!-- end: Page title -->
+
+            <!-- Content -->
+            <section id="page-content" class="sidebar-left">
+                <div class="container">
+                    <div class="row">
+                        <!--ICI-->
+                        <!-- Sidebar-->
+                        <div class="sidebar col-md-4">
+                            <div class="pinOnScroll">
+
+                                <!--Navigation-->
+
+                                <div class="widget">
+                                    <h4 class="widget-title">Liste des forums ouverts</h4>
+                                    <div id="mainMenu" class="menu-vertical">
+                                        <div class="container">
+                                            <nav>
+                                                <ul>
+                                                    <li class="active">
+                                                        <a class="scroll-to" href="#forum">
+                                                            <i class="fa fa-arrow-circle-right"></i> Conseils pour les entretiens</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="scroll-to" href="#">
+                                                            <i class="fa fa-arrow-circle-right"></i> Développeurs JS natif</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="scroll-to" href="#s">
+                                                            <i class="fa fa-arrow-circle-right"></i> Groupe React.Js</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="scroll-to" href="#">
+                                                            <i class="fa fa-arrow-circle-right"></i> Financement pour la formation de la Capsule</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="scroll-to" href="#">
+                                                            <i class="fa fa-arrow-circle-right"></i> Travailler à l'étranger</a>
+                                                    </li>
+
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end: Navigation-->
+
+
+                            </div>
+                        </div>
+                        <!-- end: Sidebar-->
+
+                        <!-- post content -->
+                        <div class="content col-md-8">
+
+                            <div class="row text-center">
+                                <div class="col-md-12">
+                                    <button class="btn btn-warning" type="button">
+                                        Commentaires
+                                        <span class="badge">8</span>
+                                    </button>
+                                    <button class="btn btn-danger" type="button">
+                                        Participants
+                                        <span class="badge">3</span>
+                                    </button>
+                                    <button class="btn btn-default" type="button">
+                                        Réponses
+                                        <span class="badge">14</span>
+                                    </button>
+                                    <button class="btn btn-info" type="button">
+                                        J'aime
+                                        <span class="badge">33</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!--END: Button example-->
+
+                            <h2 id="forum">
+                                <!-- Comments -->
+                                <div class="comments" id="comments">
+                                    <!-- Post -->
+                                    <div class="respond-form" id="respond">
+                                        <form class="form-gray-fields">
+                                            <div class="row">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-group">
+                                                            <label class="upper" for="comment">publier un commentaire
+                                                            </label>
+                                                            <textarea class="form-control required" name="comment" rows="2" placeholder="Taper ici" id="comment" aria-required="true"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3">
+                                                        <div class="form-group text-left">
+                                                            <button class="btn btn-warning" type="submit">Publier</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </form>
+                                        </div>
+                                        <!-- #END Post -->
+
+                                        <div class="seperator left">
+                                            <i class="fas fa-comments"></i>
+                                        </div>
+
+                                        <div class="comment-list">
+                                            <!-- Comment -->
+                                            <div class="comment" id="comment-1">
+                                                <div class="image">
+                                                    <img alt="" src="images/profil_1.jpg" class="avatar">
+                                                </div>
+                                                <div class="text">
+                                                    <h5 class="name">Thomas dit:</h5>
+                                                    <span class="comment_date">Envoyer à 15:32 le 12 février 2018</span>
+                                                    <a class="comment-reply-link" href="#">Répondre</a>
+                                                    <div class="text_holder">
+                                                        <p>Je propose aux Capsuliens une assistance pour préparer vos entretiens.
+                                                            Si vous êtes ok, qu'en dites-vous ?</p>
+                                                    </div>
+                                                </div>
+                                                <!-- Comment -->
+                                                <div class="comment background-grey" id="comment-1-1">
+                                                    <div class="image">
+                                                        <img alt="" src="images/profil_2.jpg" class="avatar">
+                                                    </div>
+                                                    <div class="text">
+                                                        <h5 class="name">Samantha dit:</h5>
+                                                        <span class="comment_date">Envoyer à 15:38, le 12 février 2018</span>
+                                                        <a class="comment-reply-link" href="#">Répondre</a>
+                                                        <div class="text_holder">
+                                                            <p>Excellente idée ! :) Est-ce possible de me transmettre toutes
+                                                                les infos sur cette même page ? Est ce que le service est
+                                                                gratuit ? Merci.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end: Comment -->
+                                                <!-- Comment -->
+                                                <div class="comment" id="comment-1-2">
+                                                    <div class="image">
+                                                        <img alt="" src="images/profil_3.jpg" class="avatar">
+                                                    </div>
+                                                    <div class="text">
+                                                        <h5 class="name">Clémentine dit:</h5>
+                                                        <span class="comment_date">Envoyer à 16:10, le 12 février 2018</span>
+                                                        <a class="comment-reply-link" href="#">Répondre</a>
+                                                        <div class="text_holder">
+                                                            <p>C'est une arnaque, attention aux fausses annonces, j'ai déjà
+                                                                eu affaire à lui. Il va te demander ton numéro, puis par
+                                                                la suite il te montrera son zizi au Club 128.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end: Comment -->
+                                            </div>
+                                            <!-- end: Comment -->
+                                            <!-- Comment -->
+                                            <div class="comment background-grey" id="comment-2">
+                                                <div class="image">
+                                                    <img alt="" src="images/profil_2.jpg" class="avatar">
+                                                </div>
+                                                <div class="text">
+                                                    <h5 class="name">Samantha dit:</h5>
+                                                    <span class="comment_date">Envoyer à 08:20, le 13 février 2018</span>
+                                                    <a class="comment-reply-link" href="#">Répondre</a>
+                                                    <div class="text_holder">
+                                                        <p>Merde! Je n'ai pas vu le message à temps, il vient de sortir de la
+                                                            maison ! hhh</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end: Comment -->
+                                        </div>
+                                    </div>
+                                    <!-- end: Comments -->
+                                    <hr>
+                                </div>
+                                <!-- end: post content -->
+                        </div>
+                    </div>
+            </section>
+            <!-- end: Content -->
+
+            <hr class="space">
+
+            <% include ./partials/footer %>
+
+                </div>
+
+                <!-- Go to top button -->
+                <a id="goToTop">
+                    <i class="fa fa-angle-up top-icon"></i>
+                    <i class="fa fa-angle-up"></i>
+                </a>
+
+                <!--Plugins-->
+                <script src="../javascripts/jquery.js"></script>
+                <script src="../javascripts/plugins.js"></script>
+
+                <!--Template functions-->
+                <script src="../javascripts/functions.js"></script>
+
+                <!--Fonts-->
+                <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</body>
+
+</html>

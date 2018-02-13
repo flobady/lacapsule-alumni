@@ -3,11 +3,14 @@
 
 <head>
   <title>Le site des anciens</title>
-  <link rel='stylesheet' href='/stylesheets/plugins.css' />
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <link rel='stylesheet' href='/stylesheets/responsive.css' />
+  <link rel='stylesheet' href='../stylesheets/plugins.css' />
+  <link rel='stylesheet' href='../stylesheets/style.css' />
+  <link rel='stylesheet' href='../stylesheets/responsive.css' />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800"
+    rel="stylesheet" type="text/css" />
+
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 </head>
@@ -15,17 +18,138 @@
 <body>
   <% include ./partials/header %>
 
-    <%if(user){%>
-      <h1>Welcome
-        <%= user.email %>
-      </h1>
-      <%} else { %>
-        <h1>You are not logged</h1>
-        <%}%>
+    <!-- Inspiro Slider -->
+    <div id="slider" class="inspiro-slider slider-fullscreen arrows-large arrows-creative dots-creative" data-height-xs="360">
 
-          <div>
-            <% include ./partials/footer %>
+      <!-- Slide 1 -->
+      <div class="slide" style="background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);">
+        <div class="container">
+          <div class="slide-captions text-center">
+            <!-- Captions -->
+            <h1 data-caption-animation="zoom-out">Le COMETWALL</h1>
+            <p class="lead">Notre team met à ta disposition des outils de communications pour échanger avec les autres Capsuliens</p>
+            <div data-caption-animation="zoom-out">
+              <a href="/users" class="play-button">
+                <i class="fa fa-user-plus"></i>
+              </a>
+            </div>
+            <!-- end: Captions -->
           </div>
+        </div>
+      </div>
+      <!-- end: Slide 1 -->
+    </div>
+
+    <!--start
+    <section>
+      <div class="container">
+        <%if(user){%>
+          <h1>Bienvenue
+            <%= user.email %>
+          </h1>
+          <%} else { %>
+            <h1>Tu n'es pas authentifier</h1>
+            <%}%>
+
+      </div>
+    </section>
+    #end -->
+
+    <!-- Présentation capsule-->
+    <section class="p-b-10">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="heading heading text-left">
+              <h2>Qui est la COMET Academy?</h2>
+              <span class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, sem quis lacinia faucibus, orci ipsum
+                gravida tortor, vel interdum mi sapien ut justo. Nulla varius consequat magna, id molestie ipsum volutpat
+                quis. Suspendisse consectetur fringilla luctus. Fusce id mi diam, non ornare orci. Pellentesque ipsum erat,
+                facilisis ut venenatis eu, sodales vel dolor. </span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <iframe width="1280" height="720" src="https://www.youtube.com/embed/P7k2MkVYLDE?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Présentation capsule-->
+
+    <!-- compteurs -->
+    <section style="background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 text-center">
+            <div class="icon-box effect center clean text-white">
+              <div class="icon">
+                <a href="#">
+                  <i class="fa fa-group text-white"></i>
+                </a>
+              </div>
+              <div class="counter">
+                <span data-from="0" data-to="100" data-speed="5000" data-refresh-interval="50"></span>
+                <span data-speed="3500" data-refresh-interval="50" data-to="140" data-from="0"></span>
+              </div>
+              <p class="text-white">Adhérents et formateurs</p>
+            </div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="icon-box effect center clean text-white">
+              <div class="icon">
+                <a href="#">
+                  <i class="fa fa-html5 text-white"></i>
+                </a>
+              </div>
+              <div class="counter">
+                <span data-speed="1500" data-refresh-interval="50" data-to="4500" data-from="1000" data-seperator="true"></span>
+              </div>
+              <p class="text-white">Bootcamp déjà finis!</p>
+            </div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="icon-box effect center clean text-white">
+              <div class="icon">
+                <a href="#">
+                  <i class="fa fa-comments text-white"></i>
+                </a>
+              </div>
+              <div class="counter">
+                <span data-speed="2500" data-refresh-interval="50" data-to="13020" data-from="5000" data-seperator="true"></span>
+              </div>
+              <p class="text-white">Discussions partagées</p>
+            </div>
+          </div>
+          <div class="col-md-3 text-center">
+            <div class="icon-box effect center clean text-white">
+              <div class="icon">
+                <a href="#">
+                  <i class="fa fa-university text-white"></i>
+                </a>
+              </div>
+              <div class="counter">
+                <span data-speed="2500" data-refresh-interval="50" data-to="4570" data-from="2000" data-seperator="true"></span>
+              </div>
+              <p class="text-white">Diplomés de la COMET</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- #end compteurs -->
+
+    <div>
+      <% include ./partials/footer %>
+    </div>
+
+
+    <script src="https://use.fontawesome.com/e286b68312.js"></script>
+
+    <script src="../javascripts/jquery.js"></script>
+    <script src="../javascripts/plugins.js"></script>
+
+    <!--Template functions-->
+    <script src="../javascripts/functions.js"></script>
 </body>
 
 </html>

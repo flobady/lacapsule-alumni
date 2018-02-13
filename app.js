@@ -21,6 +21,7 @@ require("./models/jobOpp"); // ajout
 var index = require("./routes/index");
 var users = require("./routes/users");
 var profile = require("./routes/profile");
+var forum = require("./routes/forum");
 var pool_profile = require("./routes/pool_profile");
 // var admin = require("./routes/admin");
 var job_opportunity = require("./routes/job_opportunity"); // ajout
@@ -55,6 +56,7 @@ app.use("/pool_profile", pool_profile);
 // app.use("/admin", admin);
 // app.use("/jobOpp", jobOpp);
 app.use("/job_opportunity", job_opportunity); // ajout
+app.use("/forum", forum);
 
 app.use(express.static(path.join(__dirname, "public")));
 

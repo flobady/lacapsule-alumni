@@ -38,12 +38,19 @@ End: Logo-->
                     </li>
 
                     <%if(!user){%>
-                      <li class="#">
-                        <a href="/users">Sign-In / Sign-Up</a>
+
+                      <li>
+                        <a href="/users">
+                          <button type="button" class="btn btn-rounded btn-xs" style="background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);">Login</button>
+                        </a>
                       </li>
+
                       <%} else {%>
-                        <li class="#">
-                          <a href="/users/logout">Logout</a>
+
+                        <li>
+                          <a href="/users/logout">
+                            <button type="button" class="btn btn-rounded btn-xs" style="background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);">Déconnexion</button>
+                          </a>
                         </li>
 
                         <%}%>
