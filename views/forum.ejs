@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Forum</title>
+  <link rel='stylesheet' href='/stylesheets/plugins.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/responsive.css' />
+  <link rel='stylesheet' href='/stylesheets/forum.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <% include ./partials/header %>
+
+
+    <h3 class="marge_a_gauche">Bienvenue dans le forum</h3>
+    <a href="/forum/chat_add" class="btn btn-primary marge_a_gauche">Create a chat</a>
+
+    <div class="row" >
+
+      <!-- Ici la div correspondant au répertoire des différents chat room -->
+      <div class="col-md-2">
+        <div class="colonne_chatrooms">
+          <b>Les ChatRooms</b>
+          <div id="rooms"></div>
+        </div>
+      </div>
+      <!-- Ici la div correspondant au chat en lui-même avec la conversation, la box d'input et le bouton send -->
+      <div class="col-md-10 colonne_conversation">
+          <div id="conversation"></div>
+          <div>
+            <input id="data" style="width:500px"/>
+            <span><input type="button" id="datasend" value="send" class="btn btn-primary" /></span>
+          </div>
+      </div>
+
+
+    <input id="pseudo" type="hidden" value="<%=user.firstName%> <%=user.lastName%>" />
+
+    <div>
+      <% include ./partials/footer %>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
+    <script>
+      var socket = io.connect('http://localhost:3000');
+      var username = document.getElementById('pseudo').value;
+      var url_string = window.location.href;
+      var url = new URL(url_string);
+      var chatId = url.searchParams.get("id");
+      var data = {
+        username: username,
+        chatId: chatId
+      };
+
+
+      // on connection to server, ask for user's name with an anonymous callback
+      socket.on('connect', function() {
+        // call the server-side function 'adduser' and send one parameter (value of prompt)
+        socket.emit('adduser', data);
+        // socket.emit('adduser', prompt("What's your name?"));
+      });
+
+      // listener, whenever the server emits 'initiatechat', this loads old messages
+      socket.on('initiatechat', function(oldMessages) {
+        oldMessages.forEach(function(message) {
+          return $('#conversation').append('<b>' + message.postedBy + ':</b> ' + message.messageContent + '<br>');
+        });
+      });
+
+      // listener, whenever the server emits 'updatechat', this updates the chat body
+      socket.on('updatechat', function(username, data) {
+        $('#conversation').append('<b>' + username + ':</b> ' + data + '<br>');
+      });
+
+      // listener, whenever the server emits 'updaterooms', this updates the room the client is in
+      socket.on('updaterooms', function(rooms, current_room) {
+        $('#rooms').empty();
+        $.each(rooms, function(key, room) {
+          if (room._id == current_room) {
+            $('#rooms').append('<div>' + room.chatName + '</div>');
+          } else {
+            $('#rooms').append('<div><a href="#" onclick="switchRoom(\'' + room._id + '\')">' + room.chatName + '</a></div>');
+          }
+        });
+      });
+
+      function switchRoom(room) {
+        console.log("on va vers la room -- ", room);
+        socket.emit('switchRoom', room);
+        $('#conversation').empty();
+        // apres avoir cleaner on load les anciens messages
+      }
+
+      // on load of page
+      $(function() {
+        // when the client clicks SEND
+        $('#datasend').click(function() {
+          var message = $('#data').val();
+          $('#data').val('');
+
+          // var url_string = window.location.href;
+          // var url = new URL(url_string);
+          // var chatId = url.searchParams.get("id");
+          var pseudo = document.getElementById('pseudo').value;
+
+          var messageData = {
+            chatId: "",
+            postedBy: pseudo,
+            messageContent: message,
+            messageCreationDate: new Date()
+          };
+
+          console.log("objet message", messageData);
+          // tell server to execute 'sendchat' and send along one parameter
+          // socket.emit('sendchat', message);
+          socket.emit('sendchat', messageData);
+        });
+
+        // when the client hits ENTER on their keyboard
+        $('#data').keypress(function(e) {
+          if (e.which == 13) {
+            $(this).blur();
+            $('#datasend').focus().click();
+          }
+        });
+      });
+    </script>
+</body>
+
+</html>

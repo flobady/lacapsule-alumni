@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
-var mongoose = require("mongoose");
+var mongoose = require('mongoose');
+var requireLogin = require('../middlewares/requireLogin');
 
 var User = mongoose.model("users");
 

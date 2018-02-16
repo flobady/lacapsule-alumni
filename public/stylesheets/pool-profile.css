@@ -1,15 +1,15 @@
-.user_picture{
+.user_picture {
   border-radius: 50%;
   height: 130px;
   width: 130px;
 }
 
 .row {
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    background-color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  padding: 15px;
 }
 
 .spaceprofile {
@@ -19,4 +19,14 @@
 
 .separation {
   margin-left: 10px;
+}
+
+.spacebis {
+  height: 20px;
+  border: none;
+}
+
+.justifier {
+  text-align: center;
+
 }

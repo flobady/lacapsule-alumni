@@ -1,16 +1,16 @@
 var mongoose = require('mongoose');
 var express= require('express');
+var fileUpload = require('express-fileupload');
 var router = express.Router();
 var session = require("express-session");
+var requireLogin = require('../middlewares/requireLogin');
 
 var UserModel = mongoose.model("users");
 
-
-router.get('/', function(req, res, next){
+router.get('/', requireLogin, function(req, res, next){
   console.log("la session du user -- ", req.session.user);
   res.render('profile', { user: req.session.user });
 });
-
 
 router.post('/save', function(req, res, next) {
   console.log("le user id est", req.session.user._id);
@@ -26,7 +26,13 @@ UserModel.findOneAndUpdate(
       myDescription: req.body.myDescription,
       wantedJob: req.body.wantedJob,
       wanttoDo: req.body.wanttoDo,
-      notwanttoDo: req.body.notwanttoDo
+      notwanttoDo: req.body.notwanttoDo,
+      html_level: req.body.html_level,
+      css_level: req.body.css_level,
+      bootstrap_level: req.body.bootstrap_level,
+      javascript_level: req.body.javascript_level,
+      react_level: req.body.react_level,
+      node_level: req.body.node_level
     },
     function (err, user) {
       console.log("uuuu", user);
@@ -35,11 +41,26 @@ UserModel.findOneAndUpdate(
         { _id: req.session.user._id }, function(err, user){
           console.log("user est maintenant : --",req.session.user);
           req.session.user = user;
-          res.render('profile', { user: req.session.user });
+          res.render('page_profile', { user: req.session.user });
         })
       })
 });
 
 // Affichage de la page pool-profile
+
+router.post('/upload', function(req, res) {
+  if (!req.files)
+    return res.status(400).send('No files were uploaded.');
+
+  // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+  var sampleFile = req.files.sampleFile;
+  var filename = req.session.user._id;
+  // Use the mv() method to place the file somewhere on your server
+  sampleFile.mv('./public/images/' + filename + '.png', function(err) {
+    if (err)
+      return res.status(500).send(err);
+    res.render('profile', { user: req.session.user });
+  });
+});
 
 module.exports = router;

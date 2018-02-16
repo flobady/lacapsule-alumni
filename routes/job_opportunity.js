@@ -1,6 +1,7 @@
 // START HOME EXPRESS
 var express = require("express");
 var router = express.Router();
+var requireLogin = require('../middlewares/requireLogin');
 
 // Initialisation du module dans le projet
 var mongoose = require("mongoose");

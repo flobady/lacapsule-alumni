@@ -1,12 +1,14 @@
 <!-- Le header -->
 <header id="header">
   <div id="header-wrap">
+    <!-- <div id="logo">
+      <a href="/" class="logo" data-dark-logo="images/logo-dark.png">
+        <img src="images/logo.png" alt="Logo"> </a>
+    </div> -->
     <div class="container">
-      <!--Logo
-<div id="logo">
-<a href="index.html" class="logo" data-dark-logo="images/logo-dark.png"> <img src="images/logo.png" alt="Polo Logo"> </a>
-</div>
-End: Logo-->
+
+
+
 
       <!--Navigation Responsive-->
       <div id="mainMenu-trigger">
@@ -22,31 +24,46 @@ End: Logo-->
           <nav>
             <ul>
               <li>
-                <a href="./pool_profile">Pool de profils</a>
+                <a href="/pool_profile">Pool de profils</a>
               </li>
-              <li class="#">
-                <a href="#">Wall</a>
+
+              <%if(!user){%>
                 <li class="#">
-                  <a href="#">Forum</a>
+                  <a href="/users">Sign-In / Sign-Up</a>
+                </li>
+                <%} else {%>
+                  <li class="#">
+                    <a href="/forum">Forum</a>
+                  </li>
+
                   <li class="#">
                     <a href="job_opportunity">Job Opportunities</a>
-                    <li class="#">
-                      <a href="#">Batch #</a>
-                    </li>
-                    <li class="#">
-                      <a href="/profile">Mon profil</a>
-                    </li>
+                  </li>
 
-                    <%if(!user){%>
-                      <li class="#">
-                        <a href="/users">Sign-In / Sign-Up</a>
-                      </li>
-                      <%} else {%>
+                  <li class="#">
+                    <a href="/trombinoscope_5">Trombinoscope</a>
+                  </li>
+
+                  <li class="#">
+                    <a href="/page_profile">Ma page</a>
+                  </li>
+
+                  <li class="#" hidden>
+                    <a href="/profile">Mon profil</a>
+                  </li>
+
+                  <li class="#">
+                    <a href="/users/logout">Logout</a>
+                  </li>
+
+                  <%}%>
+
+                    <%if(user){%>
+                      <%if(user.statusType === "admin"){%>
                         <li class="#">
-                          <a href="/users/logout">Logout</a>
+                          <a href="/admin" class="btn btn-info">ADMIN</a>
                         </li>
-
-                        <%}%>
+                        <%}}%>
             </ul>
           </nav>
         </div>

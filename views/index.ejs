@@ -1,31 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
-  <title>Le site des anciens</title>
-  <link rel='stylesheet' href='/stylesheets/plugins.css' />
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <link rel='stylesheet' href='/stylesheets/responsive.css' />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-</head>
+ <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <meta name="author" content="INSPIRO" />
+   <meta name="description" content="Themeforest Template Polo"> <!-- Document title -->
+   <title>Home Page</title> <!-- Stylesheets & Fonts -->
+   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
+   <link href="/stylesheets/plugins.css" rel="stylesheet">
+   <link href="/stylesheets/style.css" rel="stylesheet">
+   <link href="/stylesheets/responsive.css" rel="stylesheet">
+ </head>
 
 <body>
-  <% include ./partials/header %>
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <% include ./partials/header %>
+        <!-- Inspiro Slider -->
+        <div id="slider" class="inspiro-slider slider-fullscreen" data-height-xs="360">
+            <!-- Slide 1 -->
+            <div class="slide background-overlay-dark" style="background-image:url('images/portfolio/project/60.jpg');">
+                <div class="container">
+                    <div class="slide-captions text-center">
+                        <!-- Captions -->
+                        <div class="text-light" data-animation="fadeInUp">
+                          <p>
+                            <%if(user){%>
+                            <h3>Welcome <%= user.firstName %></h3>
+                          <%} else { %>
+                            <h3>You are not logged</h3>
+                          <%}%>
+                        </p>
+                            <h1>CAPSULEWALL</h1>
+                            <p class="lead">Where we stay in touch!</p>
+                        </div>
+                        <!-- end: Captions -->
+                    </div>
+                </div>
+            </div>
+            <!-- end: Slide 1 -->
+        </div>
+        <!--end: Inspiro Slider -->
+        <div><% include ./partials/footer %></div>
+    </div>
+    <!-- end: Wrapper -->
 
-    <%if(user){%>
-      <h1>Welcome
-        <%= user.email %>
-      </h1>
-      <%} else { %>
-        <h1>You are not logged</h1>
-        <%}%>
+ <!--Plugins-->
+ <script src="../javascripts/jquery.js"></script>
+ <script src="../javascripts/plugins.js"></script>
 
-          <div>
-            <% include ./partials/footer %>
-          </div>
+<!--Template functions-->
+ <script src="../javascripts/functions.js"></script>
 </body>
-
 </html>

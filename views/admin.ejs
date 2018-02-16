@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Le site des anciens</title>
+  <link rel='stylesheet' href='/stylesheets/plugins.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/responsive.css' />
+
+</head>
+<body>
+  <% include ./partials/header %>
+
+
+  <%if(user){%>
+  <h6 class="alert alert-danger"> <%= user.email %>, welcome to Admin view</h6>
+  <%}%>
+  <br/>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-9 offset-sm-3">
+        <form action="/admin/addUser" method="post" class="form-inline">
+          <label class="sr-only" for="inlineFormInput">Email of the new alumni</label>
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <div class="input-group-addon">@</div>
+            <input name="email" type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+          </div>
+          <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3">
+        <ul class="list-group">
+
+          <%for(let approvedUser of approvedUsers) {%>
+          <li class="list-group-item justify-content-between">
+            <%= approvedUser.email %>
+            <a href="" class="badge badge-danger badge-pill">Block</a>
+            <span class="badge badge-pill badge-danger">Delete</span>
+          </li>
+          <%}%>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <% include ./partials/footer %>
+</body>
+</html>
