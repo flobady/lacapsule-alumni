@@ -10,20 +10,43 @@
   <!-- Document title -->
   <title>Profile</title>
   <!-- Stylesheets & Fonts -->
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800"
+    rel="stylesheet" type="text/css" />
   <link href="../stylesheets/plugins.css" rel="stylesheet">
   <link href="../stylesheets/style.css" rel="stylesheet">
   <link href="../stylesheets/responsive.css" rel="stylesheet">
   <link href="../stylesheets/pool-profile.css" rel="stylesheet">
-  <link rel="../stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="../stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
 
   <% include ./partials/header %>
+
+    <!-- Page title -->
+    <section id="page-title" class="page-title-classic" style="background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);">
+      <div class="container">
+        <div class="breadcrumb">
+          <ul>
+            <li>
+              <a href="/" style="color:white;">Home</a>
+            </li>
+            <li class="active">
+              <a href="/pool_profile" style="color:white;">Pool Profile</a>
+            </li>
+          </ul>
+        </div>
+        <div class="page-title">
+          <h1 style="color:white;">Pool Profiles</h1>
+          <p style="color:white;">La liste de nos batcheurs#!</p>
+        </div>
+      </div>
+    </section>
+    <!-- end: Page title -->
     <hr class="space">
-    <div class="hr-title hr-long center"><abbr>Les développeurs de La Capsule</abbr> </div>
 
     <section>
       <div class="container">
@@ -36,36 +59,47 @@
             for(var i=0; i<userList.length; i++) {
             %>
 
-          <div class="post-item border">
-            <div class="post-item-wrap">
-              <div class="post-image">
-                <a href="#">
-                      <img alt="" src="/images/<%=userList[i]._id%>.png">
+            <div class="post-item border">
+              <div class="post-item-wrap">
+                <div class="post-image">
+                  <a href="#">
+                    <img alt="" src="/images/<%=userList[i]._id%>.png">
                   </a>
-                <span class="post-meta-category"><a href="">Batch#<%=userList[i].batchNumber%></a></span>
-              </div>
-              <div class="post-item-description">
-                <h2 class="justifier">
-                  <a href="#"><%=userList[i].firstName%> <%=userList[i].lastName%>
-                  </a>
-                </h2>
-                <h5 class="justifier">
-                  <a href="#"><%=userList[i].statusType%>
-                  </a>
-                </h5>
-                <p class="justifier"><%=userList[i].myDescription%></p>
+                  <span class="post-meta-category">
+                    <a href="">Batch#
+                      <%=userList[i].batchNumber%>
+                    </a>
+                  </span>
+                </div>
+                <div class="post-item-description">
+                  <h2 class="justifier">
+                    <a href="#">
+                      <%=userList[i].firstName%>
+                        <%=userList[i].lastName%>
+                    </a>
+                  </h2>
+                  <h5 class="justifier">
+                    <a href="#">
+                      <%=userList[i].statusType%>
+                    </a>
+                  </h5>
+                  <p class="justifier">
+                    <%=userList[i].myDescription%>
+                  </p>
 
-                <a href="#" class="item-link">Read More <i></i></a>
+                  <a href="#" class="item-link">Read More
+                    <i></i>
+                  </a>
 
+                </div>
               </div>
             </div>
-          </div>
 
-          <%
+            <%
           }
           %>
 
-          <!-- end: Post item-->
+              <!-- end: Post item-->
 
         </div>
     </section>
@@ -99,7 +133,10 @@
     <% include ./partials/footer %>
 
       <!-- Go to top button -->
-      <a id="goToTop"><i class="fa fa-angle-up top-icon"></i><i class="fa fa-angle-up"></i></a>
+      <a id="goToTop">
+        <i class="fa fa-angle-up top-icon"></i>
+        <i class="fa fa-angle-up"></i>
+      </a>
 
       <!--Plugins-->
       <script src="../javascripts/jquery.js"></script>

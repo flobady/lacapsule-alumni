@@ -29,7 +29,9 @@
 
               <%if(!user){%>
                 <li class="#">
-                  <a href="/users">Sign-In / Sign-Up</a>
+                  <a href="/users">
+                    <button type="button" class="btn btn-rounded btn-outline btn-sm">Sign-In / Sign-Up</button>
+                  </a>
                 </li>
                 <%} else {%>
                   <li class="#">
@@ -37,7 +39,7 @@
                   </li>
 
                   <li class="#">
-                    <a href="job_opportunity">Job Opportunities</a>
+                    <a href="/job_opportunity">Job Opportunities</a>
                   </li>
 
                   <li class="#">
@@ -61,7 +63,9 @@
                     <%if(user){%>
                       <%if(user.statusType === "admin"){%>
                         <li class="#">
-                          <a href="/admin" class="btn btn-info">ADMIN</a>
+                          <a href="/admin">
+                            <button type="button" class="btn btn-rounded btn-outline btn-sm">Admin</button>
+                          </a>
                         </li>
                         <%}}%>
             </ul>

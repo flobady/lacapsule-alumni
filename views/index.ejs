@@ -1,56 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 
- <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <meta name="author" content="INSPIRO" />
-   <meta name="description" content="Themeforest Template Polo"> <!-- Document title -->
-   <title>Home Page</title> <!-- Stylesheets & Fonts -->
-   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800" rel="stylesheet" type="text/css" />
-   <link href="/stylesheets/plugins.css" rel="stylesheet">
-   <link href="/stylesheets/style.css" rel="stylesheet">
-   <link href="/stylesheets/responsive.css" rel="stylesheet">
- </head>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="INSPIRO" />
+    <meta name="description" content="Themeforest Template Polo">
+    <!-- Document title -->
+    <title>Home Page</title>
+    <!-- Stylesheets & Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,800,700,600|Montserrat:400,500,600,700|Raleway:100,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/plugins.css" rel="stylesheet">
+    <link href="/stylesheets/style.css" rel="stylesheet">
+    <link href="/stylesheets/responsive.css" rel="stylesheet">
+</head>
 
 <body>
     <!-- Wrapper -->
     <div id="wrapper">
-      <% include ./partials/header %>
-        <!-- Inspiro Slider -->
-        <div id="slider" class="inspiro-slider slider-fullscreen" data-height-xs="360">
-            <!-- Slide 1 -->
-            <div class="slide background-overlay-dark" style="background-image:url('images/portfolio/project/60.jpg');">
-                <div class="container">
-                    <div class="slide-captions text-center">
-                        <!-- Captions -->
-                        <div class="text-light" data-animation="fadeInUp">
-                          <p>
-                            <%if(user){%>
-                            <h3>Welcome <%= user.firstName %></h3>
-                          <%} else { %>
-                            <h3>You are not logged</h3>
-                          <%}%>
-                        </p>
-                            <h1>CAPSULEWALL</h1>
-                            <p class="lead">Where we stay in touch!</p>
+        <% include ./partials/header %>
+            <!-- Inspiro Slider -->
+            <div id="slider" class="inspiro-slider slider-fullscreen arrows-large arrows-creative dots-creative" data-height-xs="360">
+
+                <!-- Slide 1 -->
+                <div class="slide" style="background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);">
+                    <div class="container">
+                        <div class="slide-captions text-center">
+                            <!-- Captions -->
+                            <h1 data-caption-animation="zoom-out">La COMET Academy</h1>
+                            <br>
+                            <p class="lead">Notre team met à ta disposition des outils de communications pour échanger avec les autres Cométiens</p>
+                            <br>
+                            <div data-caption-animation="zoom-out">
+                                <h3 data-caption-animation="zoom-out">1, 2, 3, GO!</h3>
+                                <a href="/users" class="play-button">
+                                    <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <!-- end: Captions -->
                         </div>
-                        <!-- end: Captions -->
                     </div>
                 </div>
+                <!-- end: Slide 1 -->
             </div>
-            <!-- end: Slide 1 -->
-        </div>
-        <!--end: Inspiro Slider -->
-        <div><% include ./partials/footer %></div>
+            <div>
+                <% include ./partials/footer %>
+            </div>
     </div>
     <!-- end: Wrapper -->
 
- <!--Plugins-->
- <script src="../javascripts/jquery.js"></script>
- <script src="../javascripts/plugins.js"></script>
+    <!--Plugins-->
+    <script src="../javascripts/jquery.js"></script>
+    <script src="../javascripts/plugins.js"></script>
 
-<!--Template functions-->
- <script src="../javascripts/functions.js"></script>
+    <!--Template functions-->
+    <script src="../javascripts/functions.js"></script>
 </body>
+
 </html>
