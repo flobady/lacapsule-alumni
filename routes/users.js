@@ -71,6 +71,7 @@ router.post("/signin", function(req, res, next){
      if(user){
       req.session.user = {};
       req.session.user = user;
+      console.log("le user est ",req.session.user);
       res.render("index", { user: req.session.user });
      }
      else

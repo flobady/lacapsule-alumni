@@ -28,15 +28,19 @@
                     <div class="container">
                         <div class="slide-captions text-center">
                             <!-- Captions -->
-                            <h1 data-caption-animation="zoom-out">La COMET Academy</h1>
+                            <h1 data-caption-animation="zoom-out"> <i class="fa fa-space-shuttle text-danger"></i> La Fusée <i class="fa fa-space-shuttle text-danger"></i></h1>
                             <br>
-                            <p class="lead">Notre team met à ta disposition des outils de communications pour échanger avec les autres Cométiens</p>
+                            <p class="lead">La Fusée te permet de garder le contact avec les anciens...</p>
                             <br>
                             <div data-caption-animation="zoom-out">
+                                <%if(!user){%>
                                 <h3 data-caption-animation="zoom-out">1, 2, 3, GO!</h3>
                                 <a href="/users" class="play-button">
                                     <i class="fa fa-arrow-right"></i>
                                 </a>
+                                <%} else { %>
+                                <h3 data-caption-animation="zoom-out">Bienvenue <%=user.firstName%>! </h3>
+                                <%}%>
                             </div>
                             <!-- end: Captions -->
                         </div>
